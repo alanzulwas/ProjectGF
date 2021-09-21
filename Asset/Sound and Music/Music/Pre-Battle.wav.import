@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pre-Battle.wav-a85aba4d33ac48cebb3713e9a999bc66.sample"
+
+[deps]
+
+source_file="res://Asset/Sound and Music/Music/Pre-Battle.wav"
+dest_files=[ "res://.import/Pre-Battle.wav-a85aba4d33ac48cebb3713e9a999bc66.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ReadyForTheBattle.wav-683bfc81188a4affe62e43fb9d96647e.sample"
+
+[deps]
+
+source_file="res://Asset/Sound and Music/Sound/ReadyForTheBattle.wav"
+dest_files=[ "res://.import/ReadyForTheBattle.wav-683bfc81188a4affe62e43fb9d96647e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

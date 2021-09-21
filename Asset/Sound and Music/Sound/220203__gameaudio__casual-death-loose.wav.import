@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/220203__gameaudio__casual-death-loose.wav-40a6ac70b7b98b790a6fd80362d0599b.sample"
+
+[deps]
+
+source_file="res://Asset/Sound and Music/Sound/220203__gameaudio__casual-death-loose.wav"
+dest_files=[ "res://.import/220203__gameaudio__casual-death-loose.wav-40a6ac70b7b98b790a6fd80362d0599b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
