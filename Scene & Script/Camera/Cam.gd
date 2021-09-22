@@ -12,6 +12,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
+	delta = delta
 	camera_rect = Rect2(get_child(0).global_position, Vector2())
 	camera_rect = camera_rect.expand(get_child(0).global_position)
 	camera_rect = camera_rect.expand(get_child(1).global_position)

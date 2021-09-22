@@ -1,0 +1,256 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scene & Script/Menu Game/Menu_Game.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-BoldItalic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Asset/Sound and Music/Sound/220206__gameaudio__beep-space-button.wav" type="AudioStream" id=3]
+[ext_resource path="res://Asset/Sound and Music/Sound/220203__gameaudio__casual-death-loose.wav" type="AudioStream" id=4]
+[ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-LightItalic.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "notip"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Notip:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Notip/MarginContainer/CenterContainer/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 5 )
+
+[node name="Menu_Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectOption" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="SelectedOption" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Panel1" type="ColorRect" parent="."]
+margin_right = 640.0
+margin_bottom = 384.0
+color = Color( 0.254902, 0.219608, 0.635294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 640.0
+margin_bottom = 384.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 224.0
+margin_top = 122.0
+margin_right = 415.0
+margin_bottom = 261.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 191.0
+margin_bottom = 34.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_right = 191.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 1 )
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 191.0
+margin_bottom = 139.0
+
+[node name="Selection" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+margin_left = 15.0
+margin_right = 176.0
+margin_bottom = 101.0
+
+[node name="Selection1" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection"]
+margin_right = 161.0
+margin_bottom = 17.0
+
+[node name="S" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection1"]
+margin_right = 161.0
+margin_bottom = 17.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection1/S"]
+margin_right = 7.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection1/S"]
+margin_left = 11.0
+margin_right = 161.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "Memulai Cerita"
+
+[node name="Selection2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection"]
+margin_top = 21.0
+margin_right = 161.0
+margin_bottom = 38.0
+
+[node name="S" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection2"]
+margin_right = 161.0
+margin_bottom = 17.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection2/S"]
+margin_right = 7.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection2/S"]
+margin_left = 11.0
+margin_right = 161.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "Melawan Pemain"
+
+[node name="Selection3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection"]
+margin_top = 42.0
+margin_right = 161.0
+margin_bottom = 59.0
+
+[node name="S" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection3"]
+margin_right = 161.0
+margin_bottom = 17.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection3/S"]
+margin_right = 7.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection3/S"]
+margin_left = 11.0
+margin_right = 161.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "Latihan"
+
+[node name="Selection4" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection"]
+margin_top = 63.0
+margin_right = 161.0
+margin_bottom = 80.0
+
+[node name="S" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection4"]
+margin_right = 161.0
+margin_bottom = 17.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection4/S"]
+margin_right = 7.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection4/S"]
+margin_left = 11.0
+margin_right = 161.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "Galeri"
+
+[node name="Selection5" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection"]
+margin_top = 84.0
+margin_right = 161.0
+margin_bottom = 101.0
+
+[node name="S" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection5"]
+margin_right = 161.0
+margin_bottom = 17.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection5/S"]
+margin_right = 7.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Option" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/Selection/Selection5/S"]
+margin_left = 11.0
+margin_right = 161.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "Keluar"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/notip = SubResource( 4 )
+
+[node name="Notip" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 152.0
+margin_right = -432.0
+margin_bottom = -152.0
+color = Color( 0.631373, 0.352941, 0.109804, 0.933333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Notip"]
+margin_right = 192.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Notip/MarginContainer"]
+margin_right = 192.0
+margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="Notip/MarginContainer/CenterContainer"]
+visible = false
+margin_left = 8.0
+margin_top = 21.0
+margin_right = 183.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 5 )
+text = "Konten masih dalam
+pengembangan"
+align = 1
+valign = 1

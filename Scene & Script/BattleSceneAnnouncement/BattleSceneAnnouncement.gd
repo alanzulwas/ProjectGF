@@ -32,6 +32,7 @@ func _PostBattleScene():
 func _nextRound():
 	if ScorePlayer.Player1 < 2 and ScorePlayer.Player2 < 2:
 		get_node("/root/Gameplay").queue_free()
-		get_tree().change_scene("res://Scene & Script/Gameplay/Gameplay.tscn")
+		if get_tree().change_scene("res://Scene & Script/Gameplay/Gameplay.tscn") != OK :
+			print ("An unexpected error occured when trying to switch to the Readme scene")
 	else :
 		get_tree().quit()
