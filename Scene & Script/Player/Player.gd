@@ -128,10 +128,8 @@ func _healthPlayer():
 	if self.HP == 0 :
 		if self.name == "Player1":
 			get_node("/root/Gameplay").currentWinner = "Player2"
-			ScorePlayer.Player2 += 1
 		if self.name == "Player2":
 			get_node("/root/Gameplay").currentWinner = "Player1"
-			ScorePlayer.Player1 += 1
 
 func _getInput():
 	if get_node("/root/Gameplay").BattleOn:

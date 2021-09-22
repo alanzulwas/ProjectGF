@@ -17,9 +17,12 @@ func _PostBattleScene():
 	var Text
 	if get_node("/root/Gameplay").currentWinner == "Player1":
 		Text = "Player 1"
+		ScorePlayer.Player1 += 1
 	elif get_node("/root/Gameplay").currentWinner == "Player2":
 		Text = "Player 2"
+		ScorePlayer.Player2 += 1
 	TextBS.text = Text + "\nWin The Round"
 
-func _ready():
-	pass
+func _nextRound():
+	get_node("/root/Gameplay").queue_free()
+	get_tree().change_scene("res://Scene & Script/Gameplay/Gameplay.tscn")

@@ -9,7 +9,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "PostBattleScene"
-length = 4.42
+length = 4.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("BattleSceneAnnouncement/Text:rect_position")
 tracks/0/interp = 1
@@ -53,14 +53,17 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "_PostBattleScene"
 }, {
 "args": [ "GameOver" ],
 "method": "_AnnoucementSound"
+}, {
+"args": [  ],
+"method": "_nextRound"
 } ]
 }
 
@@ -131,6 +134,7 @@ anims/PreBattleScene = SubResource( 2 )
 script = ExtResource( 2 )
 
 [node name="Panel" type="ColorRect" parent="."]
+visible = false
 margin_right = 640.0
 margin_bottom = 384.0
 color = Color( 0, 0, 0, 0.352941 )
@@ -139,9 +143,10 @@ __meta__ = {
 }
 
 [node name="Text" type="Label" parent="."]
-margin_left = -640.0
+visible = false
+margin_left = 640.0
 margin_top = 178.0
-margin_right = 6.10352e-05
+margin_right = 1280.0
 margin_bottom = 237.0
 custom_fonts/font = SubResource( 3 )
 text = "Text"
