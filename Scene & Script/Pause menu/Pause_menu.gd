@@ -28,13 +28,13 @@ func _input(event):
 			gamePaused = true
 
 		if gamePaused :
-			if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_down_2") :
+			if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_down_P2") :
 				$SelectOption.play()
 				if current_selection < 2:
 					current_selection += 1
 					set_current_selection(current_selection)
 			
-			elif event.is_action_pressed("ui_up") or event.is_action_pressed("ui_up_2") :
+			elif event.is_action_pressed("ui_up") or event.is_action_pressed("ui_up_P2") :
 				$SelectOption.play()
 				if current_selection > 0:
 					current_selection -= 1

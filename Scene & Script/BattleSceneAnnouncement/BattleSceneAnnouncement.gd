@@ -15,14 +15,23 @@ func _AnnoucementSound(_value):
 
 func _PostBattleScene():
 	var Text
-	if get_node("/root/Gameplay").currentWinner == "Player1":
-		Text = "Player 1"
-		ScorePlayer.Player1 += 1
-	elif get_node("/root/Gameplay").currentWinner == "Player2":
-		Text = "Player 2"
-		ScorePlayer.Player2 += 1
-	TextBS.text = Text + "\nWin The Round"
+	if ScorePlayer.Player1 < 2 and ScorePlayer.Player2 < 2:
+		if get_node("/root/Gameplay").currentWinner == "Player1":
+			Text = "Player 1"
+			ScorePlayer.Player1 += 1
+		elif get_node("/root/Gameplay").currentWinner == "Player2":
+			Text = "Player 2"
+			ScorePlayer.Player2 += 1
+		TextBS.text = Text + "\nWin The Round"
+	else:
+		if ScorePlayer.Player1 == 2 :
+			TextBS.text = "Player 1\n Win The Match"
+		elif ScorePlayer.Player2 == 2 :
+			TextBS.text = "Player 2\n Win The Match"
 
 func _nextRound():
-	get_node("/root/Gameplay").queue_free()
-	get_tree().change_scene("res://Scene & Script/Gameplay/Gameplay.tscn")
+	if ScorePlayer.Player1 < 2 and ScorePlayer.Player2 < 2:
+		get_node("/root/Gameplay").queue_free()
+		get_tree().change_scene("res://Scene & Script/Gameplay/Gameplay.tscn")
+	else :
+		get_tree().quit()
