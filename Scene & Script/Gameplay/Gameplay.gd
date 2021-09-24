@@ -7,8 +7,10 @@ extends Node2D
 # di Scene Pick Chara, Buat pick chara itu sendiri dan ambil 'variable pickChara' dari scene Gameplay untuk inisiasi variable
 
 
-var Player1 = load("res://Scene & Script/Player/Player.tscn").instance()
-var Player2 = load("res://Scene & Script/Player/Player2.tscn").instance()
+var Jaka = load("res://Scene & Script/Player/Jaka.tscn").instance()
+var Ryan = load("res://Scene & Script/Player/Ryan.tscn").instance()
+var Player1
+var Player2
 var Cam = load("res://Scene & Script/Camera/Cam.tscn").instance()
 export var time = 16
 var BattleOn
@@ -51,8 +53,18 @@ func _inisiasiCamera():
 	Cam.position.y = -96
 
 func _inisiasiPlayer():
+	if ScorePlayer.P1_Chara == "Jaka":
+		Player1 = Jaka
+	elif ScorePlayer.P1_Chara == "Ryan":
+		Player1 = Ryan
+	if ScorePlayer.P2_Chara == "Jaka":
+		Player2 = Jaka
+	elif ScorePlayer.P2_Chara == "Ryan":
+		Player2 = Ryan
 	Player1.name = "Player1"
 	Player2.name = "Player2"
+	Player1.get_node("AreaHit").add_to_group("AreaHit_P2")
+	Player2.get_node("AreaHit").add_to_group("AreaHit_P1")
 	Player1._player1 = Player1
 	Player1._player2 = Player2
 	Player2._player1 = Player1

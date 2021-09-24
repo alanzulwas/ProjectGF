@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scene & Script/Pick Character/CharacterResource/CharacterResource.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Character/Illustration_01.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+nama = "Jaka"
+gambar = ExtResource( 2 )
+flip = false

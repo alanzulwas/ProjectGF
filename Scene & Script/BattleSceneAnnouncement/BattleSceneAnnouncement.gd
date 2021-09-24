@@ -35,4 +35,10 @@ func _nextRound():
 		if get_tree().change_scene("res://Scene & Script/Gameplay/Gameplay.tscn") != OK :
 			print ("An unexpected error occured when trying to switch to the Readme scene")
 	else :
-		get_tree().quit()
+		ScorePlayer.P1_Chara = ""
+		ScorePlayer.P2_Chara = ""
+		ScorePlayer.Player1 = 0
+		ScorePlayer.Player2 = 0
+		get_node("/root/Gameplay").queue_free()
+		if get_tree().change_scene("res://Scene & Script/Menu Game/Menu_Game.tscn") != OK :
+			print ("An unexpected error occured when trying to switch to the Readme scene")

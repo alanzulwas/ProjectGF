@@ -24,7 +24,7 @@ func _input(event):
 			current_selection -= 1
 			set_current_selection(current_selection)
 	
-	elif event.is_action_pressed("ui_accept"):
+	elif event.is_action_pressed("ui_accept_P1") or event.is_action_pressed("ui_accept_P2"):
 		$SelectedOption.play()
 		handle_selection(current_selection)
 
@@ -35,12 +35,16 @@ func handle_selection(_current_selection):
 	if _current_selection == 0 :
 		$AnimationPlayer.play("notip")
 	elif _current_selection == 1 :
-		$AnimationPlayer.play("notip")
+		#$AnimationPlayer.play("notip")
+		self.queue_free()
+		if get_tree().change_scene("res://Scene & Script/Pick Character/PickChara.tscn") != OK :
+			print ("An unexpected error occured when trying to switch to the Readme scene")
 	elif _current_selection == 2 :
 		$AnimationPlayer.play("notip")
 	elif _current_selection == 3 :
 		$AnimationPlayer.play("notip")
 	elif _current_selection == 4:
+		yield(get_tree().create_timer(0.3),"timeout")
 		get_tree().quit()
 
 

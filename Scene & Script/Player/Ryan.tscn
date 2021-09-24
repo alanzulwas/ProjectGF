@@ -990,7 +990,7 @@ states/Run-Hit/node = SubResource( 20 )
 states/Run-Hit/position = Vector2( 41.5555, 97.7778 )
 transitions = [ "Hit3", "Idle", SubResource( 22 ), "Hit2", "Idle", SubResource( 23 ), "Hit1", "Idle", SubResource( 24 ), "Idle", "Hit1", SubResource( 25 ), "Idle", "Run", SubResource( 26 ), "Run", "Run-Hit", SubResource( 27 ), "Run", "Idle", SubResource( 28 ), "Run-Hit", "Idle", SubResource( 29 ), "Jump", "Fall", SubResource( 30 ), "Fall", "Idle", SubResource( 31 ), "Idle", "Jump", SubResource( 32 ), "Jump", "Jump-Hit", SubResource( 33 ), "Jump-Hit", "Jump", SubResource( 34 ), "Jump-Hit", "Fall", SubResource( 35 ), "Fall", "Jump-Hit", SubResource( 36 ), "Idle", "Hit2", SubResource( 37 ), "Idle", "Hit3", SubResource( 38 ), "Fall", "Jump", SubResource( 39 ), "Hurt", "Idle", SubResource( 40 ), "Idle", "Hurt", SubResource( 41 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -114, 47.75 )
+graph_offset = Vector2( -153, 207.75 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 
@@ -1012,11 +1012,10 @@ position = Vector2( -0.529732, 0.375 )
 shape = SubResource( 1 )
 
 [node name="P2" type="Sprite" parent="."]
-position = Vector2( -0.0437052, 0.967761 )
+position = Vector2( 0.623717, 0 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 8
-frame = 2
 
 [node name="P2Anima" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 2 )
@@ -1030,7 +1029,7 @@ anims/Jump-Hit = SubResource( 9 )
 anims/Run = SubResource( 10 )
 anims/Run-Hit = SubResource( 11 )
 
-[node name="State_P2" type="AnimationTree" parent="."]
+[node name="State" type="AnimationTree" parent="."]
 tree_root = SubResource( 42 )
 anim_player = NodePath("../P2Anima")
 active = true
@@ -1046,9 +1045,7 @@ wait_time = 0.8
 position = Vector2( -0.314987, -1.5749 )
 shape = SubResource( 44 )
 
-[node name="AreaHit" type="Area2D" parent="." groups=[
-"AreaHit_P1",
-]]
+[node name="AreaHit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHit"]
 position = Vector2( 21.2359, -5.46245 )

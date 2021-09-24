@@ -13,6 +13,7 @@ var playerFacing = 1
 var direction = Vector2(DIRECTION_RIGHT, 1)
 var Player = ""
 var KnockBack = false
+var _nodePlayerGet
 
 #Variable Input Hit
 var combo = "NULL"
@@ -51,9 +52,9 @@ func _ready():
 		self.global_scale.y = 1.5
 		self.playerInput = ""
 		set_direction(DIRECTION_RIGHT)
-		
-	var _nodePlayerGet = "State_" + Player
-	self.state_machine = get_node(_nodePlayerGet).get("parameters/playback")
+	print(self.name)
+	#self._nodePlayerGet = "State_" + self.Player
+	self.state_machine = self.get_node("State").get("parameters/playback")
 	self.KnockBack_vector = self.roll_vector
 
 func HitTimerReset():
@@ -137,9 +138,14 @@ func _getInput():
 		_inputAir()
 		_inputHit()
 
+var ui_left
+var ui_right
+var ui_jump
+var ui_hit
+
 func _inputMovement():
-	var ui_left = "ui_left" + self.playerInput
-	var ui_right = "ui_right" + self.playerInput
+	self.ui_left = "ui_left" + self.playerInput
+	self.ui_right = "ui_right" + self.playerInput
 	if Input.is_action_pressed(ui_left) and !self.lagi_mukul:
 		set_direction(DIRECTION_LEFT)
 		_jalan(-1)
@@ -152,7 +158,7 @@ func _inputMovement():
 			lagi_jalan = false
 
 func _inputAir():
-	var ui_jump = "ui_jump" + self.playerInput
+	self.ui_jump = "ui_jump" + self.playerInput
 	if Input.is_action_just_pressed(ui_jump):
 		if self.jumlah_lompat < 1:
 			self.jumlah_lompat += 1
@@ -167,7 +173,7 @@ func _inputAir():
 		jumlah_lompat = 0
 
 func _inputHit():
-	var ui_hit = "ui_hit" + self.playerInput
+	self.ui_hit = "ui_hit" + self.playerInput
 	#if not BattleOn & lagi_mukul & jalan:
 	if !self.lagi_mukul:
 		if !self.lagi_jalan:
