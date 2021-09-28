@@ -1000,9 +1000,10 @@ height = 25.4748
 
 [sub_resource type="RectangleShape2D" id=45]
 resource_local_to_scene = true
-extents = Vector2( 6.7276, 2.67497 )
+extents = Vector2( 5.43338, 11.1825 )
 
 [node name="Player2" type="KinematicBody2D"]
+z_index = -2
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 2 )
@@ -1012,11 +1013,10 @@ position = Vector2( -0.529732, 0.375 )
 shape = SubResource( 1 )
 
 [node name="P2" type="Sprite" parent="."]
-position = Vector2( -0.210561, 1.00113 )
+position = Vector2( 0.623717, 0 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 8
-frame = 1
 
 [node name="P2Anima" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 2 )
@@ -1049,7 +1049,7 @@ shape = SubResource( 44 )
 [node name="AreaHit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHit"]
-position = Vector2( 21.2359, -5.46245 )
+position = Vector2( 16.2721, -7.07456 )
 shape = SubResource( 45 )
 disabled = true
 

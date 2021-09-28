@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/1.mp3-bf42be595c98010f231e6ce7f77a5544.mp3str"
+
+[deps]
+
+source_file="res://Asset/Sound and Music/Music/Caged - Christoffer Isefält/1.mp3"
+dest_files=[ "res://.import/1.mp3-bf42be595c98010f231e6ce7f77a5544.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

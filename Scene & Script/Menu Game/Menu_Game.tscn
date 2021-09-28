@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scene & Script/Menu Game/Menu_Game.gd" type="Script" id=1]
 [ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-BoldItalic.ttf" type="DynamicFontData" id=2]
@@ -47,6 +47,10 @@ tracks/1/keys = {
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=6]
+size = 11
+font_data = ExtResource( 2 )
+
 [node name="Menu_Game" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -62,16 +66,19 @@ stream = ExtResource( 3 )
 stream = ExtResource( 4 )
 
 [node name="Panel1" type="ColorRect" parent="."]
-margin_right = 640.0
-margin_bottom = 384.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color( 0.254902, 0.219608, 0.635294, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 640.0
-margin_bottom = 384.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 224.0
@@ -254,3 +261,65 @@ text = "Konten masih dalam
 pengembangan"
 align = 1
 valign = 1
+
+[node name="Accept_button" type="ColorRect" parent="."]
+anchor_left = 0.037
+anchor_top = 0.937
+anchor_right = 0.062
+anchor_bottom = 0.979
+margin_left = 0.32
+margin_top = 0.191986
+margin_right = 0.32
+margin_bottom = 0.0639954
+rect_pivot_offset = Vector2( 432, -416 )
+color = Color( 0, 1, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Accept_button2" type="ColorRect" parent="."]
+visible = false
+anchor_left = 0.175
+anchor_top = 0.937
+anchor_right = 0.2
+anchor_bottom = 0.979
+margin_left = -7.62939e-06
+margin_top = 0.191986
+margin_bottom = 0.0639954
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Accept_lbl" type="Label" parent="."]
+anchor_left = 0.062
+anchor_top = 0.937
+anchor_right = 0.137
+anchor_bottom = 0.979
+margin_left = 0.32
+margin_top = 0.191986
+margin_right = 0.319992
+margin_bottom = 1.064
+custom_fonts/font = SubResource( 6 )
+text = "Buka"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Decline_lbl" type="Label" parent="."]
+visible = false
+anchor_left = 0.2
+anchor_top = 0.937
+anchor_right = 0.275
+anchor_bottom = 0.982
+margin_top = 0.191986
+margin_bottom = -0.0880127
+custom_fonts/font = SubResource( 6 )
+text = "Decline"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

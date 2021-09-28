@@ -1122,7 +1122,7 @@ position = Vector2( 1.01338, -0.0880756 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
-frame = 4
+frame = 2
 
 [node name="P1Anima" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 2 )

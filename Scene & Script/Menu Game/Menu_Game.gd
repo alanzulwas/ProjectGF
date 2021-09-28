@@ -29,13 +29,12 @@ func _input(event):
 		handle_selection(current_selection)
 
 func handle_selection(_current_selection):
-	#var popupNode = load("res://Scene & Script/Menu Game/Pop up Menu/popup.tscn").instance()
-	#popupNode.global_position.x = 320
-	#popupNode.global_position.y = 192
 	if _current_selection == 0 :
-		$AnimationPlayer.play("notip")
+		yield(get_tree().create_timer(0.4),"timeout")
+		if get_tree().change_scene("res://Scene & Script/Story Level/StoryLevel.tscn") != OK :
+			print ("An unexpected error occured when trying to switch to the Readme scene")
 	elif _current_selection == 1 :
-		#$AnimationPlayer.play("notip")
+		yield(get_tree().create_timer(0.4),"timeout")
 		self.queue_free()
 		if get_tree().change_scene("res://Scene & Script/Pick Character/PickChara.tscn") != OK :
 			print ("An unexpected error occured when trying to switch to the Readme scene")
@@ -44,7 +43,7 @@ func handle_selection(_current_selection):
 	elif _current_selection == 3 :
 		$AnimationPlayer.play("notip")
 	elif _current_selection == 4:
-		yield(get_tree().create_timer(0.3),"timeout")
+		yield(get_tree().create_timer(0.4),"timeout")
 		get_tree().quit()
 
 
