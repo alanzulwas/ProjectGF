@@ -26,13 +26,12 @@ var KnockBack_vector = Vector2.ZERO
 var roll_vector = Vector2.LEFT
 var playerInput = ""
 
-#onready var _player1 = get_node("/root/Gameplay/Cam/Player1")
-#onready var _player2 = get_node("/root/Gameplay/Cam/Player2")
-
 var _player1
 var _player2
 
 onready var HP = 100 
+onready var Energy = 3
+onready var skill = false
 onready var Lifebar = get_node("/root/Gameplay/Lifebars_and_Timer/Lifebar")
 
 func _ready():
@@ -52,8 +51,6 @@ func _ready():
 		self.global_scale.y = 1.5
 		self.playerInput = ""
 		set_direction(DIRECTION_RIGHT)
-	print(self.name)
-	#self._nodePlayerGet = "State_" + self.Player
 	self.state_machine = self.get_node("State").get("parameters/playback")
 	self.KnockBack_vector = self.roll_vector
 
@@ -75,6 +72,11 @@ func _hitAnimation(_value):
 func _runHitTrue():
 	self.runHit = true
 
+func _skillAnimation(_value):
+	self.skill = _value
+	if _value :
+		self.Energy -= 1
+
 func _runHitFalse():
 	self.runHit = false
 
@@ -86,7 +88,7 @@ func _grafitasi():
 	if self.velocity.y > 200:
 		self.velocity.y = 200
 
-func set_direction(hor_direction): #ide dari Godot Community pake : $".".scale.x = 1
+func set_direction(hor_direction):
 	if hor_direction == 0:
 		hor_direction = DIRECTION_RIGHT # default to right if param is 0
 	var hor_dir_mod = hor_direction / abs(hor_direction) # get unit direction
@@ -100,23 +102,23 @@ func _jalan(_arah):
 	self.lagi_jalan = true
 
 func _situationPlayer(delta):
-	#print(self.Player,", ",self.runHit,", ",self.KnockBack)
-	if self.runHit and !self.KnockBack:
-		self.velocity.x = clamp(self.velocity.x, -SPEED, SPEED)
-		self.velocity.x += SPEED * self.dir
-		self.velocity = move_and_slide(self.velocity, self.UP)
-		self.velocity.x = lerp(self.velocity.x,self.dir*0,0.06)
-	
-	elif !self.runHit and self.KnockBack:
-		state_machine.travel("Hurt")
-		self.velocity = velocity.move_toward(Vector2.ZERO, 200 * delta)
-		self.velocity = move_and_slide(self.velocity)
-	
-	elif !self.runHit and !self.KnockBack:
-		self.velocity.x = clamp(self.velocity.x, -75, 75)
-		_getInput()
-		self.velocity = move_and_slide(self.velocity,self.UP)
-		self.velocity.x = lerp(self.velocity.x,0,0.2)
+	if !skill :
+		if self.runHit and !self.KnockBack:
+			self.velocity.x = clamp(self.velocity.x, -SPEED, SPEED)
+			self.velocity.x += SPEED * self.dir
+			self.velocity = move_and_slide(self.velocity, self.UP)
+			self.velocity.x = lerp(self.velocity.x,self.dir*0,0.06)
+		
+		elif !self.runHit and self.KnockBack:
+			state_machine.travel("Hurt")
+			self.velocity = self.velocity.move_toward(Vector2.ZERO, 200 * delta)
+			self.velocity = move_and_slide(self.velocity)
+		
+		elif !self.runHit and !self.KnockBack:
+			self.velocity.x = clamp(self.velocity.x, -75, 75)
+			_getInput()
+			self.velocity = move_and_slide(self.velocity,self.UP)
+			self.velocity.x = lerp(self.velocity.x,0,0.2)
  
 func _process(delta):
 	_grafitasi()
@@ -125,21 +127,26 @@ func _process(delta):
 	_healthPlayer()
 
 func _healthPlayer():
-	Lifebar.set_percent_value_int(self.name,HP)
+	Lifebar.set_percent_value_int(self.name,self.HP)
+	Lifebar.set_energy_value_int(self.name,self.Energy)
 	if self.HP == 0 :
 		if self.name == "Player1":
 			get_node("/root/Gameplay").currentWinner = "Player2"
 		if self.name == "Player2":
 			get_node("/root/Gameplay").currentWinner = "Player1"
+		self.state_machine.travel("Death")
 
 func _getInput():
 	if get_node("/root/Gameplay").BattleOn:
 		_inputMovement()
 		_inputAir()
 		_inputHit()
+		_inputSkill()
 
 var ui_left
 var ui_right
+var ui_up
+var ui_down
 var ui_jump
 var ui_hit
 
@@ -148,10 +155,12 @@ func _inputMovement():
 	self.ui_right = "ui_right" + self.playerInput
 	if Input.is_action_pressed(ui_left) and !self.lagi_mukul:
 		set_direction(DIRECTION_LEFT)
+		self.z_index = -1
 		_jalan(-1)
 	elif Input.is_action_pressed(ui_right) and !self.lagi_mukul:
 		set_direction(DIRECTION_RIGHT)
 		_jalan(1)
+		self.z_index = 0
 	else :
 		if !lagi_mukul:
 			state_machine.travel("Idle")
@@ -204,6 +213,53 @@ func _inputHit():
 				self.state_machine.travel("Jump-Hit")
 				self.AttackPoints = 3
 
+var input = ""
+var inputArr = []
+var comboSkill = []
+var ui_skill
+
+func _inputSkill():
+	if self.input == "skill" and self.Energy != 0:
+		self.comboSkill = self.inputArr.duplicate()
+		
+		if self.comboSkill == ["kanan","kanan","skill"] or self.comboSkill == ["kiri","kiri","skill"]:
+			self.state_machine.travel("Skill1")
+		
+		self.input = ""
+		while len(self.inputArr):
+			self.inputArr.pop_front()
+
+	if self.input == "kanan" || self.input == "kiri" || self.input == "atas" || self.input == "bawah" :
+		if len(self.comboSkill) > 0 :
+			while len(self.comboSkill):
+				self.comboSkill.pop_front()
+
+
+func _input(event):
+	event = event
+	self.ui_skill = "ui_skill" + self.playerInput
+	self.ui_left = "ui_left" + self.playerInput
+	self.ui_right = "ui_right" + self.playerInput
+	self.ui_up = "ui_up" + self.playerInput
+	self.ui_down = "ui_down" + self.playerInput
+	
+	self.get_node("Timer").start()
+	if Input.is_action_just_pressed(self.ui_right):
+		self.input = "kanan"
+		self.inputArr.append(self.input)
+	if Input.is_action_just_pressed(self.ui_left):
+		self.input = "kiri"
+		self.inputArr.append(self.input)
+	if Input.is_action_just_pressed(self.ui_up):
+		self.input = "atas"
+		self.inputArr.append(self.input)
+	if Input.is_action_just_pressed(self.ui_down):
+		self.input = "bawah"
+		self.inputArr.append(self.input)
+	if Input.is_action_just_pressed(self.ui_skill):
+		self.input = "skill"
+		self.inputArr.append(self.input)
+
 func _KnockBack_Way(_dir):
 	var playerArea
 	if self.Player == "P1":
@@ -214,7 +270,7 @@ func _KnockBack_Way(_dir):
 	if self.dir == 1:
 		playerArea.KnockBack_vector = Vector2.RIGHT
 	if self.dir == -1:
-		playerArea.KnockBack_vector = Vector2.LEFT
+		playerArea.KnockBack_vector = Vector2.LEFT 
 
 func _on_AreaDmg_area_entered(area):
 	var AreaHit

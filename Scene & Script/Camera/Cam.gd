@@ -14,9 +14,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	delta = delta
 	camera_rect = Rect2(get_child(0).global_position, Vector2())
-	camera_rect = camera_rect.expand(get_child(0).global_position)
-	camera_rect = camera_rect.expand(get_child(1).global_position)
-	
+	camera_rect = camera_rect.expand(get_child(0).get_node("CollisionPlayer").global_position)
+	camera_rect = camera_rect.expand(get_child(1).get_node("CollisionPlayer").global_position)
 	offset = calculate_center(camera_rect)
 	zoom = calculate_zoom(camera_rect, viewport_rect.size)
 	

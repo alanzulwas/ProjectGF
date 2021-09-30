@@ -54,3 +54,79 @@ text = "Score : 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="EnergyBar1" type="Control" parent="."]
+margin_right = 256.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="ColorRect" parent="EnergyBar1"]
+margin_left = 8.0
+margin_top = 40.0
+margin_right = 48.0
+margin_bottom = 48.0
+color = Color( 0.0117647, 0.576471, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="ColorRect" parent="EnergyBar1"]
+margin_left = 72.0
+margin_top = 40.0
+margin_right = 112.0
+margin_bottom = 48.0
+color = Color( 0.0117647, 0.576471, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="ColorRect" parent="EnergyBar1"]
+margin_left = 136.0
+margin_top = 40.0
+margin_right = 176.0
+margin_bottom = 48.0
+color = Color( 0.0117647, 0.576471, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyBar2" type="Control" parent="."]
+anchor_left = 0.6
+anchor_right = 0.6
+margin_right = 256.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="ColorRect" parent="EnergyBar2"]
+margin_left = 80.0
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 48.0
+color = Color( 0.0117647, 0.576471, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="ColorRect" parent="EnergyBar2"]
+margin_left = 144.0
+margin_top = 40.0
+margin_right = 184.0
+margin_bottom = 48.0
+color = Color( 0.0117647, 0.576471, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="ColorRect" parent="EnergyBar2"]
+margin_left = 208.0
+margin_top = 40.0
+margin_right = 248.0
+margin_bottom = 48.0
+color = Color( 0.0117647, 0.576471, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
