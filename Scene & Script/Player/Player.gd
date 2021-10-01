@@ -14,6 +14,16 @@ var direction = Vector2(DIRECTION_RIGHT, 1)
 var Player = ""
 var KnockBack = false
 var _nodePlayerGet
+var ui_left
+var ui_right
+var ui_up
+var ui_down
+var ui_jump
+var ui_hit
+var input = ""
+var inputArr = []
+var comboSkill = []
+var ui_skill
 
 #Variable Input Hit
 var combo = "NULL"
@@ -53,6 +63,9 @@ func _ready():
 		set_direction(DIRECTION_RIGHT)
 	self.state_machine = self.get_node("State").get("parameters/playback")
 	self.KnockBack_vector = self.roll_vector
+
+func _travelToIdle():
+	state_machine.travel("Idle")
 
 func HitTimerReset():
 	self.AttackPoints = 3
@@ -143,13 +156,6 @@ func _getInput():
 		_inputHit()
 		_inputSkill()
 
-var ui_left
-var ui_right
-var ui_up
-var ui_down
-var ui_jump
-var ui_hit
-
 func _inputMovement():
 	self.ui_left = "ui_left" + self.playerInput
 	self.ui_right = "ui_right" + self.playerInput
@@ -213,17 +219,14 @@ func _inputHit():
 				self.state_machine.travel("Jump-Hit")
 				self.AttackPoints = 3
 
-var input = ""
-var inputArr = []
-var comboSkill = []
-var ui_skill
-
 func _inputSkill():
 	if self.input == "skill" and self.Energy != 0:
 		self.comboSkill = self.inputArr.duplicate()
 		
 		if self.comboSkill == ["kanan","kanan","skill"] or self.comboSkill == ["kiri","kiri","skill"]:
 			self.state_machine.travel("Skill1")
+		if self.comboSkill == ["kanan","bawah","skill"] or self.comboSkill == ["kiri","bawah","skill"]:
+			self.state_machine.travel("Skill2")
 		
 		self.input = ""
 		while len(self.inputArr):
@@ -233,7 +236,6 @@ func _inputSkill():
 		if len(self.comboSkill) > 0 :
 			while len(self.comboSkill):
 				self.comboSkill.pop_front()
-
 
 func _input(event):
 	event = event
