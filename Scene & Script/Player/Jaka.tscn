@@ -1597,11 +1597,8 @@ animation = "Run"
 [sub_resource type="AnimationNodeAnimation" id=27]
 animation = "Skill1"
 
-[sub_resource type="AnimationNodeAnimation" id=55]
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "Skill2"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=29]
 switch_mode = 2
@@ -1610,6 +1607,7 @@ switch_mode = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=32]
 
@@ -1618,10 +1616,10 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=34]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=35]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=37]
 
@@ -1630,12 +1628,12 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=39]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=41]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=42]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=43]
 
@@ -1644,26 +1642,28 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=45]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=46]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=47]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=48]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=49]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=57]
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=51]
+[sub_resource type="AnimationNodeStateMachine" id=54]
 states/Death/node = SubResource( 16 )
 states/Death/position = Vector2( 32.6667, 528.607 )
 states/Fall/node = SubResource( 17 )
@@ -1688,20 +1688,20 @@ states/Run-Hit/node = SubResource( 25 )
 states/Run-Hit/position = Vector2( 41.5555, 97.7778 )
 states/Skill1/node = SubResource( 27 )
 states/Skill1/position = Vector2( -322.185, 529.742 )
-states/Skill2/node = SubResource( 55 )
+states/Skill2/node = SubResource( 28 )
 states/Skill2/position = Vector2( -214.667, 529.464 )
-transitions = [ "Hit3", "Idle", SubResource( 28 ), "Hit2", "Idle", SubResource( 29 ), "Hit1", "Idle", SubResource( 30 ), "Idle", "Hit1", SubResource( 31 ), "Idle", "Run", SubResource( 32 ), "Run", "Run-Hit", SubResource( 33 ), "Run", "Idle", SubResource( 34 ), "Run-Hit", "Idle", SubResource( 35 ), "Jump", "Fall", SubResource( 36 ), "Fall", "Idle", SubResource( 37 ), "Idle", "Jump", SubResource( 38 ), "Jump", "Jump-Hit", SubResource( 39 ), "Jump-Hit", "Jump", SubResource( 40 ), "Jump-Hit", "Fall", SubResource( 41 ), "Fall", "Jump-Hit", SubResource( 42 ), "Idle", "Hit2", SubResource( 43 ), "Idle", "Hit3", SubResource( 44 ), "Fall", "Jump", SubResource( 45 ), "Hurt", "Idle", SubResource( 46 ), "Idle", "Hurt", SubResource( 47 ), "Idle", "Death", SubResource( 48 ), "Idle", "Skill1", SubResource( 49 ), "Skill1", "Idle", SubResource( 50 ), "Idle", "Skill2", SubResource( 56 ), "Skill2", "Idle", SubResource( 57 ) ]
+transitions = [ "Hit3", "Idle", SubResource( 29 ), "Hit2", "Idle", SubResource( 30 ), "Hit1", "Idle", SubResource( 31 ), "Idle", "Hit1", SubResource( 32 ), "Idle", "Run", SubResource( 33 ), "Run", "Run-Hit", SubResource( 34 ), "Run", "Idle", SubResource( 35 ), "Run-Hit", "Idle", SubResource( 36 ), "Jump", "Fall", SubResource( 37 ), "Fall", "Idle", SubResource( 38 ), "Idle", "Jump", SubResource( 39 ), "Jump", "Jump-Hit", SubResource( 40 ), "Jump-Hit", "Jump", SubResource( 41 ), "Jump-Hit", "Fall", SubResource( 42 ), "Fall", "Jump-Hit", SubResource( 43 ), "Idle", "Hit2", SubResource( 44 ), "Idle", "Hit3", SubResource( 45 ), "Fall", "Jump", SubResource( 46 ), "Hurt", "Idle", SubResource( 47 ), "Idle", "Hurt", SubResource( 48 ), "Idle", "Death", SubResource( 49 ), "Idle", "Skill1", SubResource( 50 ), "Skill1", "Idle", SubResource( 51 ), "Idle", "Skill2", SubResource( 52 ), "Skill2", "Idle", SubResource( 53 ) ]
 start_node = "Idle"
 end_node = "Death"
-graph_offset = Vector2( -402.769, 353.75 )
+graph_offset = Vector2( -176.769, -123.25 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=52]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=55]
 
-[sub_resource type="CapsuleShape2D" id=53]
+[sub_resource type="CapsuleShape2D" id=56]
 radius = 7.95321
 height = 25.4748
 
-[sub_resource type="RectangleShape2D" id=54]
+[sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 184, 24 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -1718,7 +1718,7 @@ position = Vector2( 1.01338, -0.0880756 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
-frame = 3
+frame = 2
 
 [node name="P1Anima" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 2 )
@@ -1737,11 +1737,11 @@ anims/Skill1 = SubResource( 14 )
 anims/Skill2 = SubResource( 15 )
 
 [node name="State" type="AnimationTree" parent="."]
-tree_root = SubResource( 51 )
+tree_root = SubResource( 54 )
 anim_player = NodePath("../P1Anima")
 active = true
 process_mode = 0
-parameters/playback = SubResource( 52 )
+parameters/playback = SubResource( 55 )
 
 [node name="HitTimerReset" type="Timer" parent="."]
 wait_time = 0.8
@@ -1750,12 +1750,12 @@ wait_time = 0.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDmg"]
 position = Vector2( -0.314987, -1.5749 )
-shape = SubResource( 53 )
+shape = SubResource( 56 )
 
 [node name="AreaHit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHit"]
-shape = SubResource( 54 )
+shape = SubResource( 57 )
 disabled = true
 
 [node name="SkillShow" type="ColorRect" parent="AreaHit"]

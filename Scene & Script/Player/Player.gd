@@ -189,7 +189,6 @@ func _inputAir():
 
 func _inputHit():
 	self.ui_hit = "ui_hit" + self.playerInput
-	#if not BattleOn & lagi_mukul & jalan:
 	if !self.lagi_mukul:
 		if !self.lagi_jalan:
 			if self.AttackPoints == 3 and self.state_machine.get_current_node() == "Idle":
