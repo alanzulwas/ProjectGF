@@ -133,7 +133,7 @@ func _situationPlayer(delta):
 			self.velocity = move_and_slide(self.velocity,self.UP)
 			self.velocity.x = lerp(self.velocity.x,0,0.2)
  
-func _process(delta):
+func _physics_process(delta):
 	_grafitasi()
 	_KnockBack_Way(self.dir)
 	_situationPlayer(delta)

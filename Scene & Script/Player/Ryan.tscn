@@ -1648,14 +1648,11 @@ animation = "Run-Hit"
 [sub_resource type="AnimationNodeAnimation" id=25]
 animation = "Run"
 
-[sub_resource type="AnimationNodeAnimation" id=54]
+[sub_resource type="AnimationNodeAnimation" id=26]
 animation = "Skill1"
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=27]
 animation = "Skill2"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
 switch_mode = 2
@@ -1664,6 +1661,7 @@ switch_mode = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=31]
 
@@ -1672,10 +1670,10 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=34]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=35]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
@@ -1684,12 +1682,12 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=38]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=39]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=41]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=42]
 
@@ -1698,26 +1696,28 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=44]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=45]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=46]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=47]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=48]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=50]
+[sub_resource type="AnimationNodeStateMachine" id=53]
 states/Death/node = SubResource( 15 )
 states/Death/position = Vector2( 89.2446, 310.803 )
 states/Fall/node = SubResource( 16 )
@@ -1740,22 +1740,22 @@ states/Run/node = SubResource( 25 )
 states/Run/position = Vector2( 39.7778, -60.1111 )
 states/Run-Hit/node = SubResource( 24 )
 states/Run-Hit/position = Vector2( 41.5555, 97.7778 )
-states/Skill1/node = SubResource( 54 )
+states/Skill1/node = SubResource( 26 )
 states/Skill1/position = Vector2( -56.3333, 314.665 )
-states/Skill2/node = SubResource( 26 )
+states/Skill2/node = SubResource( 27 )
 states/Skill2/position = Vector2( -164.333, 316.186 )
-transitions = [ "Hit3", "Idle", SubResource( 27 ), "Hit2", "Idle", SubResource( 28 ), "Hit1", "Idle", SubResource( 29 ), "Idle", "Hit1", SubResource( 30 ), "Idle", "Run", SubResource( 31 ), "Run", "Run-Hit", SubResource( 32 ), "Run", "Idle", SubResource( 33 ), "Run-Hit", "Idle", SubResource( 34 ), "Jump", "Fall", SubResource( 35 ), "Fall", "Idle", SubResource( 36 ), "Idle", "Jump", SubResource( 37 ), "Jump", "Jump-Hit", SubResource( 38 ), "Jump-Hit", "Jump", SubResource( 39 ), "Jump-Hit", "Fall", SubResource( 40 ), "Fall", "Jump-Hit", SubResource( 41 ), "Idle", "Hit2", SubResource( 42 ), "Idle", "Hit3", SubResource( 43 ), "Fall", "Jump", SubResource( 44 ), "Hurt", "Idle", SubResource( 45 ), "Idle", "Hurt", SubResource( 46 ), "Idle", "Death", SubResource( 47 ), "Idle", "Skill2", SubResource( 48 ), "Skill2", "Idle", SubResource( 49 ), "Idle", "Skill1", SubResource( 55 ), "Skill1", "Idle", SubResource( 56 ) ]
+transitions = [ "Hit3", "Idle", SubResource( 28 ), "Hit2", "Idle", SubResource( 29 ), "Hit1", "Idle", SubResource( 30 ), "Idle", "Hit1", SubResource( 31 ), "Idle", "Run", SubResource( 32 ), "Run", "Run-Hit", SubResource( 33 ), "Run", "Idle", SubResource( 34 ), "Run-Hit", "Idle", SubResource( 35 ), "Jump", "Fall", SubResource( 36 ), "Fall", "Idle", SubResource( 37 ), "Idle", "Jump", SubResource( 38 ), "Jump", "Jump-Hit", SubResource( 39 ), "Jump-Hit", "Jump", SubResource( 40 ), "Jump-Hit", "Fall", SubResource( 41 ), "Fall", "Jump-Hit", SubResource( 42 ), "Idle", "Hit2", SubResource( 43 ), "Idle", "Hit3", SubResource( 44 ), "Fall", "Jump", SubResource( 45 ), "Hurt", "Idle", SubResource( 46 ), "Idle", "Hurt", SubResource( 47 ), "Idle", "Death", SubResource( 48 ), "Idle", "Skill2", SubResource( 49 ), "Skill2", "Idle", SubResource( 50 ), "Idle", "Skill1", SubResource( 51 ), "Skill1", "Idle", SubResource( 52 ) ]
 start_node = "Idle"
 end_node = "Death"
 graph_offset = Vector2( -318, 231.75 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=51]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=54]
 
-[sub_resource type="CapsuleShape2D" id=52]
+[sub_resource type="CapsuleShape2D" id=55]
 radius = 7.95321
 height = 25.4748
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=56]
 resource_local_to_scene = true
 extents = Vector2( 95.0344, 1.72495 )
 
@@ -1769,11 +1769,10 @@ position = Vector2( -0.529732, 0.375 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.0437052, 0.967761 )
+position = Vector2( 0.623717, 0 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 8
-frame = 2
 
 [node name="P2Anima" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 2 )
@@ -1791,11 +1790,11 @@ anims/Skill1 = SubResource( 13 )
 anims/Skill2 = SubResource( 14 )
 
 [node name="State" type="AnimationTree" parent="."]
-tree_root = SubResource( 50 )
+tree_root = SubResource( 53 )
 anim_player = NodePath("../P2Anima")
 active = true
 process_mode = 0
-parameters/playback = SubResource( 51 )
+parameters/playback = SubResource( 54 )
 
 [node name="HitTimerReset" type="Timer" parent="."]
 wait_time = 0.8
@@ -1804,7 +1803,7 @@ wait_time = 0.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDmg"]
 position = Vector2( -0.314987, -1.5749 )
-shape = SubResource( 52 )
+shape = SubResource( 55 )
 
 [node name="AreaHit" type="Area2D" parent="."]
 
@@ -1858,12 +1857,12 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHit"]
 position = Vector2( 127.084, -0.210463 )
-shape = SubResource( 53 )
+shape = SubResource( 56 )
 disabled = true
 
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
-wait_time = 0.3
+wait_time = 0.6
 
 [connection signal="animation_finished" from="P2Anima" to="." method="_on_animation_finished"]
 [connection signal="timeout" from="HitTimerReset" to="." method="HitTimerReset"]
