@@ -14,20 +14,18 @@ func _AnnoucementSound(_value):
 		$Sound_and_Bgmusic/GameOver_Announcement.play()
 
 func _PostBattleScene():
-	var Text
-	if ScorePlayer.Player1 < 2 and ScorePlayer.Player2 < 2:
-		if get_node("/root/Gameplay").currentWinner == "Player1":
-			Text = "Player 1"
-			ScorePlayer.Player1 += 1
-		elif get_node("/root/Gameplay").currentWinner == "Player2":
-			Text = "Player 2"
-			ScorePlayer.Player2 += 1
-		TextBS.text = Text + "\nWin The Round"
-	else:
-		if ScorePlayer.Player1 == 2 :
-			TextBS.text = "Player 1\n Win The Match"
-		elif ScorePlayer.Player2 == 2 :
-			TextBS.text = "Player 2\n Win The Match"
+	if get_node("/root/Gameplay").currentWinner == "Player1":
+		ScorePlayer.Player1 += 1
+		if ScorePlayer.Player1 < 2:
+			TextBS.text = "Player 1\nTook The Round"
+		else :
+			TextBS.text = "Player 1\n Won"
+	elif ScorePlayer.Player1 <= 1 and get_node("/root/Gameplay").currentWinner == "Player2":
+		ScorePlayer.Player2 += 1
+		if ScorePlayer.Player2 < 2:
+			TextBS.text = "Player 2\nTook The Round"
+		else :
+			TextBS.text = "Player 2\n Won"
 
 func _nextRound():
 	if ScorePlayer.Player1 < 2 and ScorePlayer.Player2 < 2:

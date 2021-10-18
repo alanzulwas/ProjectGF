@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scene & Script/Pause menu/Pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-BoldItalic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Asset/Sound and Music/Sound/220206__gameaudio__beep-space-button.wav" type="AudioStream" id=3]
 [ext_resource path="res://Asset/Sound and Music/Sound/220203__gameaudio__casual-death-loose.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scene & Script/Pause menu/Option/Option_pauseMenu.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -29,8 +30,8 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="MarginContainer" parent="."]
-margin_right = 640.0
-margin_bottom = 384.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -151,3 +152,6 @@ stream = ExtResource( 3 )
 
 [node name="SelectedOption" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Option" parent="." instance=ExtResource( 5 )]
+visible = false

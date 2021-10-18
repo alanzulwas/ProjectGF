@@ -34,18 +34,22 @@ func handle_selection(_current_selection):
 		if get_tree().change_scene("res://Scene & Script/Story Level/StoryLevel.tscn") != OK :
 			print ("An unexpected error occured when trying to switch to the Readme scene")
 	elif _current_selection == 1 :
+		ScorePlayer.sceneGameplay = ""
 		yield(get_tree().create_timer(0.4),"timeout")
 		self.queue_free()
 		if get_tree().change_scene("res://Scene & Script/Pick Character/PickChara.tscn") != OK :
 			print ("An unexpected error occured when trying to switch to the Readme scene")
 	elif _current_selection == 2 :
-		$AnimationPlayer.play("notip")
+		ScorePlayer.sceneGameplay = "Training"
+		yield(get_tree().create_timer(0.4),"timeout")
+		self.queue_free()
+		if get_tree().change_scene("res://Scene & Script/Pick Character/PickChara.tscn") != OK :
+			print ("An unexpected error occured when trying to switch to the Readme scene")
 	elif _current_selection == 3 :
 		$AnimationPlayer.play("notip")
 	elif _current_selection == 4:
 		yield(get_tree().create_timer(0.4),"timeout")
 		get_tree().quit()
-
 
 func set_current_selection(_current_selection):
 	selector1.text = ""

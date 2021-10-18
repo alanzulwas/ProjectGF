@@ -6,3 +6,5 @@ onready var Player2 = 0
 #Character
 onready var P1_Chara = ""
 onready var P2_Chara = ""
+
+onready var sceneGameplay = ""

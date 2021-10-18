@@ -1073,10 +1073,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 17.8735, -9.98293 ) ]
+"values": [ Vector2( 15.1406, -10.6136 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("AreaHit/CollisionShape2D:disabled")
@@ -1101,6 +1101,18 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("AreaHit/CollisionShape2D:shape:extents")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8.93322, 1.60209 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -1747,7 +1759,7 @@ states/Skill2/position = Vector2( -164.333, 316.186 )
 transitions = [ "Hit3", "Idle", SubResource( 28 ), "Hit2", "Idle", SubResource( 29 ), "Hit1", "Idle", SubResource( 30 ), "Idle", "Hit1", SubResource( 31 ), "Idle", "Run", SubResource( 32 ), "Run", "Run-Hit", SubResource( 33 ), "Run", "Idle", SubResource( 34 ), "Run-Hit", "Idle", SubResource( 35 ), "Jump", "Fall", SubResource( 36 ), "Fall", "Idle", SubResource( 37 ), "Idle", "Jump", SubResource( 38 ), "Jump", "Jump-Hit", SubResource( 39 ), "Jump-Hit", "Jump", SubResource( 40 ), "Jump-Hit", "Fall", SubResource( 41 ), "Fall", "Jump-Hit", SubResource( 42 ), "Idle", "Hit2", SubResource( 43 ), "Idle", "Hit3", SubResource( 44 ), "Fall", "Jump", SubResource( 45 ), "Hurt", "Idle", SubResource( 46 ), "Idle", "Hurt", SubResource( 47 ), "Idle", "Death", SubResource( 48 ), "Idle", "Skill2", SubResource( 49 ), "Skill2", "Idle", SubResource( 50 ), "Idle", "Skill1", SubResource( 51 ), "Skill1", "Idle", SubResource( 52 ) ]
 start_node = "Idle"
 end_node = "Death"
-graph_offset = Vector2( -318, 231.75 )
+graph_offset = Vector2( -221, 120.75 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=54]
 
@@ -1757,7 +1769,7 @@ height = 25.4748
 
 [sub_resource type="RectangleShape2D" id=56]
 resource_local_to_scene = true
-extents = Vector2( 95.0344, 1.72495 )
+extents = Vector2( 8.93322, 1.60209 )
 
 [node name="Player2" type="KinematicBody2D"]
 collision_layer = 4
@@ -1856,7 +1868,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHit"]
-position = Vector2( 127.084, -0.210463 )
+position = Vector2( 15.1406, -10.6136 )
 shape = SubResource( 56 )
 disabled = true
 

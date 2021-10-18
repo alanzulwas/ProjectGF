@@ -14,7 +14,7 @@ font_data = ExtResource( 6 )
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource( 2 )
-time = 65
+time = 30
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
 

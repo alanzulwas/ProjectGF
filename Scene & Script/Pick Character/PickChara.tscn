@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Asset/Character/Illustration_03.png" type="Texture" id=1]
 [ext_resource path="res://Asset/Character/Illustration_01.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-RegularItalic.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Asset/Selector/SelectorP2.png" type="Texture" id=7]
 [ext_resource path="res://Asset/Selector/SelectorP1.png" type="Texture" id=8]
+[ext_resource path="res://Asset/Sound and Music/Sound/220206__gameaudio__beep-space-button.wav" type="AudioStream" id=9]
+[ext_resource path="res://Asset/Sound and Music/Sound/220203__gameaudio__casual-death-loose.wav" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 6 )
@@ -130,9 +132,9 @@ anchor_left = 0.275
 anchor_top = 0.812
 anchor_right = 0.312
 anchor_bottom = 0.854
-margin_top = 0.191986
+margin_top = 0.191956
 margin_right = 0.319992
-margin_bottom = 0.0639954
+margin_bottom = 0.0639648
 texture = ExtResource( 8 )
 expand = true
 __meta__ = {
@@ -141,15 +143,20 @@ __meta__ = {
 
 [node name="SelectorP2" type="TextureRect" parent="."]
 anchor_left = 0.65
-anchor_top = 0.812
+anchor_top = 0.813
 anchor_right = 0.687
 anchor_bottom = 0.854
-margin_left = -3.05176e-05
-margin_top = 0.191986
-margin_right = 0.319977
-margin_bottom = 0.0639954
+margin_top = -0.191986
+margin_right = 0.320038
+margin_bottom = 0.0640564
 texture = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SelectOption" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="SelectedOption" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )

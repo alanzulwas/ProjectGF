@@ -1,12 +1,5 @@
 extends Node2D
 
-# Untuk Pick Character
-# Ada 2 Scene yaitu, Scene Gameplay dan Scene Pick Chara
-# di Scene Gameplay,   Load semua node karakter untuk inisiasi Karakter - karakternya
-#                      Buat variable penentu "pick character" untuk mendapatkan info karakter yang dipilih (pickChara1 , pickChara2)
-# di Scene Pick Chara, Buat pick chara itu sendiri dan ambil 'variable pickChara' dari scene Gameplay untuk inisiasi variable
-
-
 var Jaka = load("res://Scene & Script/Player/Jaka.tscn").instance()
 var Ryan = load("res://Scene & Script/Player/Ryan.tscn").instance()
 var Player1
@@ -14,6 +7,7 @@ var Player2
 var Cam = load("res://Scene & Script/Camera/Cam.tscn").instance()
 export var time = 16
 var BattleOn
+var TimeOn
 
 onready var currentWinner = "NoWinner"
 onready var TimerGame = $Lifebars_and_Timer/T1/T11/TimerText
@@ -28,24 +22,35 @@ func _ready():
 
 func _process(delta):
 	_inisiasiScore()
-	if time < 1 and BattleOn:
-		BattleOn = false
-		$BattleSceneCanvas/BattleSceneAnnouncement.play("PostBattleScene")
-		set_process(false)
-	
-	if currentWinner !=  "NoWinner":
-		BattleOn = false
-		$BattleSceneCanvas/BattleSceneAnnouncement.play("PostBattleScene")
-		set_process(false)
-	
-	if BattleOn:
-		time -=delta
-		
-		var secs = fmod(time,60)
-		var mins = fmod(time,60*60)/60
-		
-		var timed_passed = "%02d : %02d" % [mins,secs]
-		TimerGame.text = timed_passed
+	_gameCondition(delta)
+
+func _gameCondition(delta):
+	if ScorePlayer.sceneGameplay == "Training":
+		$Lifebars_and_Timer/T1/T11/TimerText.visible = false
+	else:
+		if time < 1 :
+			TimeOn = false
+			if Player1.HP >= 1 and Player2.HP >= 1 :
+				Player1.HP -= 0.1
+				Player2.HP -= 0.1
+			else:
+				BattleOn = false
+				$BattleSceneCanvas/BattleSceneAnnouncement.play("PostBattleScene")
+				set_process(false)
+
+		if currentWinner !=  "NoWinner":
+			BattleOn = false
+			$BattleSceneCanvas/BattleSceneAnnouncement.play("PostBattleScene")
+			set_process(false)
+
+		if TimeOn:
+			time -=delta
+			
+			var secs = fmod(time,60)
+			var mins = fmod(time,60*60)/60
+			
+			var timed_passed = "%02d : %02d" % [mins,secs]
+			TimerGame.text = timed_passed
 
 func _inisiasiCamera():
 	Cam.name = "Cam"
@@ -75,12 +80,22 @@ func _inisiasiScore():
 	get_node("Lifebars_and_Timer/Lifebar/ScoreP2").text = "Score : " + str(ScorePlayer.Player2)
 
 func _preBattle():
-	$BgMusic.play()
-	$BgMusic.stream_paused = true
-	TimerGame.visible = false
-	BattleOn = false
-	$BattleSceneCanvas/BattleSceneAnnouncement.play("PreBattleScene")
-	yield(get_tree().create_timer(7.05), "timeout")
-	$BgMusic.stream_paused = false
-	TimerGame.visible = true
-	BattleOn = true
+	if ScorePlayer.sceneGameplay != "Training":
+		$BgMusic.play()
+		$BgMusic.stream_paused = true
+		TimerGame.visible = false
+		BattleOn = false
+		TimeOn = false
+		$BattleSceneCanvas/BattleSceneAnnouncement.play("PreBattleScene")
+		yield(get_tree().create_timer(7.05), "timeout")
+		$BgMusic.stream_paused = false
+		TimerGame.visible = true
+		BattleOn = true
+		TimeOn = true
+	else :
+		$BattleSceneCanvas/BattleSceneAnnouncement/Panel.visible = false
+		$BgMusic.stream_paused = false
+		TimerGame.visible = true
+		BattleOn = true
+		TimeOn = true
+		

@@ -1,12 +1,5 @@
 extends Node2D
 
-# Untuk Pick Character
-# Ada 2 Scene yaitu, Scene Gameplay dan Scene Pick Chara
-# di Scene Gameplay,   Load semua node karakter untuk inisiasi Karakter - karakternya
-#                      Buat variable penentu "pick character" untuk mendapatkan info karakter yang dipilih (pickChara1 , pickChara2)
-# di Scene Pick Chara, Buat pick chara itu sendiri dan ambil 'variable pickChara' dari scene Gameplay untuk inisiasi variable
-
-
 var Jaka = load("res://Scene & Script/Player/Jaka.tscn").instance()
 var Ryan = load("res://Scene & Script/Player/Ryan.tscn").instance()
 var Player1 = Jaka
@@ -31,7 +24,7 @@ func _process(delta):
 	if time < 1 and BattleOn:
 		BattleOn = false
 		set_process(false)
-	
+
 	if currentWinner !=  "NoWinner":
 		BattleOn = false
 		set_process(false)

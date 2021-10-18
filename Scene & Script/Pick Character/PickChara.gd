@@ -46,22 +46,28 @@ func _set_current_selection(P,CuSe):
 func _input(event):
 	#P1
 	if event.is_action_pressed("ui_right") and current_selection1 < 1 and !pickedP1:
+		$SelectOption.play()
 		current_selection1 += 1
 		_set_current_selection("P1",current_selection1)
 	elif event.is_action_pressed("ui_left") and current_selection1 > 0 and !pickedP1:
+		$SelectOption.play()
 		current_selection1 -= 1
 		_set_current_selection("P1",current_selection1)
 	elif event.is_action_pressed("ui_accept_P1") and !pickedP1:
+		$SelectedOption.play()
 		_handle_selection("P1",current_selection1)
-	
+
 	#P2
 	if event.is_action_pressed("ui_right_P2") and current_selection2 < 1 and !pickedP2:
+		$SelectOption.play()
 		current_selection2 += 1
 		_set_current_selection("P2",current_selection2)
 	elif event.is_action_pressed("ui_left_P2") and current_selection2 > 0 and !pickedP2:
+		$SelectOption.play()
 		current_selection2 -= 1
 		_set_current_selection("P2",current_selection2)
 	elif event.is_action_pressed("ui_accept_P2") and !pickedP2:
+		$SelectedOption.play()
 		_handle_selection("P2",current_selection2)
 
 func _handle_selection(P,CuSe):
@@ -87,6 +93,7 @@ func _handle_selection(P,CuSe):
 	if pickedP1 == true and pickedP2 == true:
 		ScorePlayer.P1_Chara = Player1
 		ScorePlayer.P2_Chara = Player2
+		yield(get_tree().create_timer(0.4),"timeout")
 		self.queue_free()
 		if get_tree().change_scene("res://Scene & Script/Gameplay/Gameplay.tscn") != OK :
 			print ("An unexpected error occured when trying to switch to the Readme scene")

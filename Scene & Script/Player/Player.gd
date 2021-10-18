@@ -87,7 +87,7 @@ func _runHitTrue():
 
 func _skillAnimation(_value):
 	self.skill = _value
-	if _value :
+	if _value and ScorePlayer.sceneGameplay != "Training":
 		self.Energy -= 1
 
 func _runHitFalse():
@@ -140,14 +140,15 @@ func _physics_process(delta):
 	_healthPlayer()
 
 func _healthPlayer():
-	Lifebar.set_percent_value_int(self.name,self.HP)
-	Lifebar.set_energy_value_int(self.name,self.Energy)
-	if self.HP == 0 :
-		if self.name == "Player1":
-			get_node("/root/Gameplay").currentWinner = "Player2"
-		if self.name == "Player2":
-			get_node("/root/Gameplay").currentWinner = "Player1"
-		self.state_machine.travel("Death")
+	if ScorePlayer.sceneGameplay != "Training":
+		Lifebar.set_percent_value_int(self.name,self.HP)
+		Lifebar.set_energy_value_int(self.name,self.Energy)
+		if self.HP  < 1 :
+			if self.name == "Player1":
+				get_node("/root/Gameplay").currentWinner = "Player2"
+			if self.name == "Player2":
+				get_node("/root/Gameplay").currentWinner = "Player1"
+			self.state_machine.travel("Death")
 
 func _getInput():
 	if get_node("/root/Gameplay").BattleOn:

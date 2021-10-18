@@ -1201,10 +1201,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 17.8735, -9.98293 ) ]
+"values": [ Vector2( 15.2248, -10.6451 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("AreaHit/CollisionShape2D:disabled")
@@ -1229,6 +1229,18 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("AreaHit/CollisionShape2D:shape:extents")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 7.66323, 1.53123 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -1702,7 +1714,7 @@ radius = 7.95321
 height = 25.4748
 
 [sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 184, 24 )
+extents = Vector2( 7.66323, 1.53123 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 4
@@ -1754,6 +1766,7 @@ shape = SubResource( 56 )
 [node name="AreaHit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHit"]
+position = Vector2( 15.2248, -10.6451 )
 shape = SubResource( 57 )
 disabled = true
 
