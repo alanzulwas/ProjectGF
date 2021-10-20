@@ -98,4 +98,3 @@ func _preBattle():
 		TimerGame.visible = true
 		BattleOn = true
 		TimeOn = true
-		

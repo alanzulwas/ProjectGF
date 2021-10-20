@@ -1,0 +1,297 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scene & Script/Galeri/PanelCredit/PanelCredit.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-RegularItalic.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Asset/Font/retroica/Retroica.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Asset/Sound and Music/Sound/220203__gameaudio__casual-death-loose.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+font_data = ExtResource( 3 )
+
+[node name="PanelCredit" type="ColorRect"]
+anchor_left = 0.45
+anchor_top = 0.042
+anchor_right = 0.95
+anchor_bottom = 0.958
+margin_top = -0.128002
+margin_bottom = 0.127991
+color = Color( 0.380392, 0.372549, 0.443137, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.325
+anchor_top = 0.045
+anchor_right = 0.675
+anchor_bottom = 0.142
+margin_left = -7.62939e-06
+margin_top = 0.16
+margin_right = -3.0
+margin_bottom = 0.0159988
+custom_fonts/font = SubResource( 1 )
+text = "Credit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+anchor_left = 0.025
+anchor_top = 0.159
+anchor_right = 0.375
+anchor_bottom = 0.207
+margin_top = 0.0319977
+margin_right = -7.62939e-06
+margin_bottom = 0.135994
+custom_fonts/font = SubResource( 2 )
+text = "Alan Zulfikar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name2" type="Label" parent="."]
+anchor_left = 0.025
+anchor_top = 0.455
+anchor_right = 0.372
+anchor_bottom = 0.5
+margin_top = -0.160004
+margin_right = -0.0400009
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "@snow.pixel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name3" type="Label" parent="."]
+anchor_left = 0.025
+anchor_top = 0.523
+anchor_right = 0.375
+anchor_bottom = 0.568
+margin_top = -0.0960083
+margin_right = -7.62939e-06
+margin_bottom = 1.064
+custom_fonts/font = SubResource( 2 )
+text = "@adhiemh27"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name4" type="Label" parent="."]
+anchor_left = 0.025
+anchor_top = 0.591
+anchor_right = 0.975
+anchor_bottom = 0.639
+margin_top = -0.0320129
+margin_bottom = 0.0719757
+custom_fonts/font = SubResource( 2 )
+text = "M. Bambang Firdaus, S.Kom., M.Eng"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name5" type="Label" parent="."]
+anchor_left = 0.025
+anchor_top = 0.659
+anchor_right = 0.975
+anchor_bottom = 0.705
+margin_top = 0.0319824
+margin_bottom = 0.839981
+custom_fonts/font = SubResource( 2 )
+text = "Ir. Novianti Puspitasari, S.Kom., M.Eng"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name6" type="Label" parent="."]
+anchor_left = 0.025
+anchor_top = 0.727
+anchor_right = 0.975
+anchor_bottom = 0.776
+margin_top = 0.0959778
+margin_bottom = -0.152008
+custom_fonts/font = SubResource( 2 )
+text = "Medi Taruk"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name7" type="Label" parent="."]
+anchor_left = 0.025
+anchor_top = 0.795
+anchor_right = 0.975
+anchor_bottom = 0.844
+margin_top = 0.160004
+margin_bottom = -0.0880127
+custom_fonts/font = SubResource( 2 )
+text = "Reza Wardhana"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name8" type="Label" parent="."]
+anchor_left = 0.125
+anchor_top = 0.886
+anchor_right = 0.875
+anchor_bottom = 0.977
+margin_top = 0.127991
+margin_right = -3.05176e-05
+margin_bottom = 3.09598
+custom_fonts/font = SubResource( 2 )
+text = "Fakultas Teknik, Informatika
+Universitas Mulawarman"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subtitle" type="Label" parent="."]
+anchor_left = 0.325
+anchor_top = 0.386
+anchor_right = 0.675
+anchor_bottom = 0.435
+margin_left = -7.62939e-06
+margin_top = 0.127991
+margin_right = -1.0
+margin_bottom = -0.12001
+custom_fonts/font = SubResource( 2 )
+text = "Thanks to"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Role" type="Label" parent="."]
+anchor_left = 0.6
+anchor_top = 0.159
+anchor_right = 0.972
+anchor_bottom = 0.205
+margin_top = 0.0319977
+margin_right = -0.0400085
+margin_bottom = 0.839996
+custom_fonts/font = SubResource( 3 )
+text = "Programmer"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Role2" type="Label" parent="."]
+anchor_left = 0.6
+anchor_top = 0.227
+anchor_right = 0.972
+anchor_bottom = 0.273
+margin_top = 0.095993
+margin_right = -0.0400085
+margin_bottom = 0.903999
+custom_fonts/font = SubResource( 3 )
+text = "Developer"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Role3" type="Label" parent="."]
+anchor_left = 0.6
+anchor_top = 0.295
+anchor_right = 0.972
+anchor_bottom = 0.341
+margin_top = 0.159996
+margin_right = -0.0400085
+margin_bottom = 0.967995
+custom_fonts/font = SubResource( 3 )
+text = "Story Writer"
+align = 2
+
+[node name="Role4" type="Label" parent="."]
+anchor_left = 0.6
+anchor_top = 0.455
+anchor_right = 0.972
+anchor_bottom = 0.503
+margin_top = -0.160004
+margin_right = -0.0400085
+margin_bottom = -0.0559998
+custom_fonts/font = SubResource( 3 )
+text = "Animator"
+align = 2
+
+[node name="Role5" type="Label" parent="."]
+anchor_left = 0.55
+anchor_top = 0.523
+anchor_right = 0.972
+anchor_bottom = 0.571
+margin_top = -0.0960083
+margin_right = -0.0400085
+margin_bottom = 0.00798035
+custom_fonts/font = SubResource( 3 )
+text = "Desain Karakter"
+align = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+anchor_left = 0.025
+anchor_top = 0.023
+anchor_right = 0.975
+anchor_bottom = 0.977
+margin_top = -0.0960007
+margin_bottom = 0.0959778
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+margin_right = 304.0
+margin_bottom = 335.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+margin_left = 150.0
+margin_top = 165.0
+margin_right = 154.0
+margin_bottom = 169.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_right = 4.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2"]
+margin_right = 4.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_right = 4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
+margin_right = 4.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 4.0
+margin_right = 4.0
+
+[node name="SelectedOption" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

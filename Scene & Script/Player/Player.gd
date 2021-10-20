@@ -246,16 +246,16 @@ func _input(event):
 	self.ui_down = "ui_down" + self.playerInput
 	
 	self.get_node("Timer").start()
-	if Input.is_action_just_pressed(self.ui_right):
+	if Input.is_action_just_released(self.ui_right):
 		self.input = "kanan"
 		self.inputArr.append(self.input)
-	if Input.is_action_just_pressed(self.ui_left):
+	if Input.is_action_just_released(self.ui_left):
 		self.input = "kiri"
 		self.inputArr.append(self.input)
-	if Input.is_action_just_pressed(self.ui_up):
+	if Input.is_action_just_released(self.ui_up):
 		self.input = "atas"
 		self.inputArr.append(self.input)
-	if Input.is_action_just_pressed(self.ui_down):
+	if Input.is_action_just_released(self.ui_down):
 		self.input = "bawah"
 		self.inputArr.append(self.input)
 	if Input.is_action_just_pressed(self.ui_skill):
@@ -288,3 +288,13 @@ func _on_AreaDmg_area_entered(area):
 		self.KnockBack = true
 		self.HP -= 10
 		self.velocity = playerArea.KnockBack_vector * 50
+
+
+func _inputSkill_Timeout():
+	self.input = ""
+	while len(self.inputArr):
+		self.inputArr.pop_front()
+	
+	if len(self.comboSkill) > 0 :
+			while len(self.comboSkill):
+				self.comboSkill.pop_front()

@@ -1,6 +1,11 @@
 extends AnimationPlayer
 
+var battleEndMenu = load("res://Scene & Script/Gameplay/BattleEnd/BattleEnd.tscn").instance()
+
 onready var TextBS = $Text
+
+func _battleEnd():
+	get_node("/root/Gameplay").add_child(battleEndMenu)
 
 func _PreBattleScene():
 	TextBS.text = "Ready\nFor The Battle"
@@ -37,6 +42,7 @@ func _nextRound():
 		ScorePlayer.P2_Chara = ""
 		ScorePlayer.Player1 = 0
 		ScorePlayer.Player2 = 0
-		get_node("/root/Gameplay").queue_free()
-		if get_tree().change_scene("res://Scene & Script/Menu Game/Menu_Game.tscn") != OK :
-			print ("An unexpected error occured when trying to switch to the Readme scene")
+		_battleEnd()
+#		get_node("/root/Gameplay").queue_free()
+#		if get_tree().change_scene("res://Scene & Script/Menu Game/Menu_Game.tscn") != OK :
+#			print ("An unexpected error occured when trying to switch to the Readme scene")

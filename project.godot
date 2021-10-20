@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "CharacterResource",
 "language": "GDScript",
 "path": "res://Scene & Script/Pick Character/CharacterResource/CharacterResource.gd"
+}, {
+"base": "Resource",
+"class": "InfoKarakter",
+"language": "GDScript",
+"path": "res://Scene & Script/Galeri/PanelKarakter/Character Resource/characterResource.gd"
 } ]
 _global_script_class_icons={
-"CharacterResource": ""
+"CharacterResource": "",
+"InfoKarakter": ""
 }
 
 [application]

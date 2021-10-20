@@ -1,0 +1,416 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scene & Script/Galeri/PanelKarakter/PanelKarakter_Info.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Sound and Music/Sound/220203__gameaudio__casual-death-loose.wav" type="AudioStream" id=2]
+[ext_resource path="res://Asset/Character/Illustration_01.png" type="Texture" id=3]
+[ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Asset/Font/retroica/Retroica.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Asset/Character/Illustration_03.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 13
+font_data = ExtResource( 5 )
+
+[node name="PanelKarakter_Info" type="ColorRect"]
+anchor_left = 0.037
+anchor_top = 0.062
+anchor_right = 0.975
+anchor_bottom = 0.937
+margin_left = 0.32
+margin_top = 0.192003
+margin_bottom = 0.191986
+color = Color( 0.705882, 0.690196, 0.835294, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectedOption" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="Jaka" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.05176e-05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Jaka"]
+anchor_right = 0.48
+anchor_bottom = 1.0
+margin_bottom = 3.05176e-05
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nama" type="Label" parent="Jaka"]
+anchor_left = 0.493
+anchor_top = 0.071
+anchor_right = 0.595
+anchor_bottom = 0.122
+margin_left = 0.199982
+margin_top = 0.143997
+margin_right = -3.05176e-05
+margin_bottom = 0.00799561
+custom_fonts/font = SubResource( 1 )
+text = "Nama :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Umur" type="Label" parent="Jaka"]
+anchor_left = 0.493
+anchor_top = 0.167
+anchor_right = 0.595
+anchor_bottom = 0.217
+margin_left = 0.199982
+margin_top = -0.112003
+margin_right = -3.05176e-05
+margin_bottom = 0.0879974
+custom_fonts/font = SubResource( 1 )
+text = "Umur :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goldar" type="Label" parent="Jaka"]
+anchor_left = 0.493
+anchor_top = 0.262
+anchor_right = 0.64
+anchor_bottom = 0.372
+margin_left = 0.199982
+margin_top = -0.0320053
+margin_right = -3.05176e-05
+margin_bottom = 3.008
+custom_fonts/font = SubResource( 1 )
+text = "Golongan 
+Darah :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sifat" type="Label" parent="Jaka"]
+anchor_left = 0.493
+anchor_top = 0.405
+anchor_right = 0.587
+anchor_bottom = 0.455
+margin_left = 0.199982
+margin_top = -0.0800171
+margin_right = -0.200012
+margin_bottom = 0.119995
+custom_fonts/font = SubResource( 1 )
+text = "Sifat :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tinggi" type="Label" parent="Jaka"]
+anchor_left = 0.493
+anchor_top = 0.5
+anchor_right = 0.597
+anchor_bottom = 0.551
+margin_left = 0.199982
+margin_right = -0.200012
+margin_bottom = -0.136002
+custom_fonts/font = SubResource( 1 )
+text = "Tinggi :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nama_info" type="Label" parent="Jaka"]
+anchor_left = 0.667
+anchor_top = 0.071
+anchor_right = 0.987
+anchor_bottom = 0.119
+margin_left = -0.200043
+margin_top = 0.143997
+margin_right = -0.200012
+margin_bottom = 0.0159988
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Jaka"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Umur_info" type="Label" parent="Jaka"]
+anchor_left = 0.667
+anchor_top = 0.167
+anchor_right = 0.987
+anchor_bottom = 0.208
+margin_left = -0.200043
+margin_top = -0.112003
+margin_right = -0.200012
+margin_bottom = 0.112
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "27 Tahun"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goldar_info" type="Label" parent="Jaka"]
+anchor_left = 0.667
+anchor_top = 0.315
+anchor_right = 0.987
+anchor_bottom = 0.357
+margin_left = -0.200043
+margin_top = 0.159988
+margin_right = -0.200012
+margin_bottom = 0.0479889
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "O"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sifat_info" type="Label" parent="Jaka"]
+anchor_left = 0.667
+anchor_top = 0.381
+anchor_right = 0.987
+anchor_bottom = 0.476
+margin_left = -0.200043
+margin_top = -0.0160065
+margin_right = -0.200012
+margin_bottom = 0.0639954
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Sangat Percaya diri,
+Ambisius, Baik hati"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tinggi_info" type="Label" parent="Jaka"]
+anchor_left = 0.667
+anchor_top = 0.5
+anchor_right = 0.987
+anchor_bottom = 0.548
+margin_left = -0.200043
+margin_right = -0.200012
+margin_bottom = -0.128006
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "181 cm"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ryan" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.05176e-05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Ryan"]
+anchor_right = 0.48
+anchor_bottom = 1.0
+margin_bottom = 3.05176e-05
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nama" type="Label" parent="Ryan"]
+anchor_left = 0.493
+anchor_top = 0.071
+anchor_right = 0.595
+anchor_bottom = 0.122
+margin_left = 0.199982
+margin_top = 0.143997
+margin_right = -3.05176e-05
+margin_bottom = 0.00799561
+custom_fonts/font = SubResource( 1 )
+text = "Nama :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Umur" type="Label" parent="Ryan"]
+anchor_left = 0.493
+anchor_top = 0.167
+anchor_right = 0.595
+anchor_bottom = 0.217
+margin_left = 0.199982
+margin_top = -0.112003
+margin_right = -3.05176e-05
+margin_bottom = 0.0879974
+custom_fonts/font = SubResource( 1 )
+text = "Umur :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goldar" type="Label" parent="Ryan"]
+anchor_left = 0.493
+anchor_top = 0.262
+anchor_right = 0.64
+anchor_bottom = 0.372
+margin_left = 0.199982
+margin_top = -0.0320053
+margin_right = -3.05176e-05
+margin_bottom = 3.008
+custom_fonts/font = SubResource( 1 )
+text = "Golongan 
+Darah :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sifat" type="Label" parent="Ryan"]
+anchor_left = 0.493
+anchor_top = 0.405
+anchor_right = 0.587
+anchor_bottom = 0.455
+margin_left = 0.199982
+margin_top = -0.0800171
+margin_right = -0.200012
+margin_bottom = 0.119995
+custom_fonts/font = SubResource( 1 )
+text = "Sifat :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tinggi" type="Label" parent="Ryan"]
+anchor_left = 0.493
+anchor_top = 0.5
+anchor_right = 0.597
+anchor_bottom = 0.551
+margin_left = 0.199982
+margin_right = -0.200012
+margin_bottom = -0.136002
+custom_fonts/font = SubResource( 1 )
+text = "Tinggi :"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nama_info" type="Label" parent="Ryan"]
+anchor_left = 0.667
+anchor_top = 0.071
+anchor_right = 0.987
+anchor_bottom = 0.119
+margin_left = -0.200043
+margin_top = 0.143997
+margin_right = -0.200012
+margin_bottom = 0.0159988
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Ryan"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Umur_info" type="Label" parent="Ryan"]
+anchor_left = 0.667
+anchor_top = 0.167
+anchor_right = 0.987
+anchor_bottom = 0.208
+margin_left = -0.200043
+margin_top = -0.112003
+margin_right = -0.200012
+margin_bottom = 0.112
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "19 Tahun"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goldar_info" type="Label" parent="Ryan"]
+anchor_left = 0.667
+anchor_top = 0.315
+anchor_right = 0.987
+anchor_bottom = 0.357
+margin_left = -0.200043
+margin_top = 0.159988
+margin_right = -0.200012
+margin_bottom = 0.0479889
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "B"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sifat_info" type="Label" parent="Ryan"]
+anchor_left = 0.667
+anchor_top = 0.381
+anchor_right = 0.987
+anchor_bottom = 0.476
+margin_left = -0.200043
+margin_top = -0.0160065
+margin_right = -0.200012
+margin_bottom = 0.0639954
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Ambisius, Pemaksa,
+Tempramen"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tinggi_info" type="Label" parent="Ryan"]
+anchor_left = 0.667
+anchor_top = 0.5
+anchor_right = 0.987
+anchor_bottom = 0.548
+margin_left = -0.200043
+margin_right = -0.200012
+margin_bottom = -0.128006
+rect_min_size = Vector2( 192, 0 )
+custom_fonts/font = SubResource( 3 )
+text = "173 cm"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
