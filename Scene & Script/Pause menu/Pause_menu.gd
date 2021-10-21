@@ -14,7 +14,7 @@ func _ready():
 
 func _input(event):
 	if get_node("/root/Gameplay").BattleOn :
-		if event.is_action_pressed("ui_pause"):
+		if event.is_action_pressed("ui_pause") and currentPauseMenu != "Option":
 			$SelectedOption.play()
 			set_visible(true)
 			get_tree().paused = true
@@ -52,6 +52,10 @@ func handle_selection(_current_selection):
 		yield(get_tree().create_timer(0.4),"timeout")
 	elif _current_selection == 2:
 		ScorePlayer.sceneGameplay = ""
+		ScorePlayer.P1_Chara = ""
+		ScorePlayer.P2_Chara = ""
+		ScorePlayer.Player1 = 0
+		ScorePlayer.Player2 = 0
 		currentPauseMenu = ""
 		yield(get_tree().create_timer(0.4),"timeout")
 		get_tree().paused = false
@@ -73,3 +77,4 @@ func set_current_selection(_current_selection):
 		selector_2.text = ">"
 	elif _current_selection == 2:
 		selector_3.text = ">"
+

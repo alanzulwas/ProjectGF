@@ -8,3 +8,5 @@ onready var P1_Chara = ""
 onready var P2_Chara = ""
 
 onready var sceneGameplay = ""
+
+onready var bgm = false

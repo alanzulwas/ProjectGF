@@ -8,6 +8,7 @@ var Cam = load("res://Scene & Script/Camera/Cam.tscn").instance()
 export var time = 16
 var BattleOn
 var TimeOn
+var preBattle
 
 onready var currentWinner = "NoWinner"
 onready var TimerGame = $Lifebars_and_Timer/T1/T11/TimerText
@@ -23,6 +24,8 @@ func _ready():
 func _process(delta):
 	_inisiasiScore()
 	_gameCondition(delta)
+	if !preBattle:
+		bgm(ScorePlayer.bgm)
 
 func _gameCondition(delta):
 	if ScorePlayer.sceneGameplay == "Training":
@@ -83,6 +86,7 @@ func _preBattle():
 	if ScorePlayer.sceneGameplay != "Training":
 		$BgMusic.play()
 		$BgMusic.stream_paused = true
+		preBattle = true
 		TimerGame.visible = false
 		BattleOn = false
 		TimeOn = false
@@ -92,9 +96,18 @@ func _preBattle():
 		TimerGame.visible = true
 		BattleOn = true
 		TimeOn = true
+		preBattle = false
+		if ScorePlayer.bgm:
+			$BgMusic.volume_db = 1
 	else :
 		$BattleSceneCanvas/BattleSceneAnnouncement/Panel.visible = false
 		$BgMusic.stream_paused = false
 		TimerGame.visible = true
 		BattleOn = true
 		TimeOn = true
+
+func bgm(activated):
+	if activated:
+		$BgMusic.stream_paused = true
+	elif !activated:
+		$BgMusic.stream_paused = false

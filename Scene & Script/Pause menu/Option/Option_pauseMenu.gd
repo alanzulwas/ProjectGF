@@ -2,10 +2,15 @@ extends MarginContainer
 
 onready var selector_1 = $CenterContainer/VBoxContainer/CenterContainer/HBoxContainer3/Selector
 onready var selector_2 = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer3/Selector
+onready var bgmAct = $CenterContainer/VBoxContainer/CenterContainer/HBoxContainer3/OptionName2
 
 var current_selection = 0
 
 func _ready():
+	if ScorePlayer.bgm :
+			bgmAct.text = "OFF"
+	elif !ScorePlayer.bgm :
+			bgmAct.text = "ON"
 	set_current_selection(0)
 
 func _input(event):
@@ -29,7 +34,12 @@ func _input(event):
 
 func handle_selection(_current_selection):
 	if _current_selection == 0 :
-		pass
+		if !ScorePlayer.bgm :
+			bgmAct.text = "OFF"
+			ScorePlayer.bgm = true
+		elif ScorePlayer.bgm :
+			bgmAct.text = "ON"
+			ScorePlayer.bgm = false
 	elif _current_selection == 1:
 		get_node("/root/Gameplay/PauseMenu/Pause_menu").currentPauseMenu = "Pause"
 		get_node("/root/Gameplay/PauseMenu/Pause_menu").gamePaused = true

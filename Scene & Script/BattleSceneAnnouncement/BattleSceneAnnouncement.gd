@@ -9,7 +9,8 @@ func _battleEnd():
 
 func _PreBattleScene():
 	TextBS.text = "Ready\nFor The Battle"
-	$Sound_and_Bgmusic/PreBattleAudio.play()
+	if !ScorePlayer.bgm :
+		$Sound_and_Bgmusic/PreBattleAudio.play()
 	$Sound_and_Bgmusic/ReadyForTheBattle_Announcement.play()
 
 func _AnnoucementSound(_value):
