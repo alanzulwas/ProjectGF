@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-RegularItalic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Asset/Font/jumper_3/JumperPERSONALUSEONLY-BoldItalic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scene & Script/Pause menu/Option/Option_pauseMenu.gd" type="Script" id=3]
+[ext_resource path="res://Asset/Keyboard/Keyboard-2.png" type="Texture" id=4]
+[ext_resource path="res://Asset/Keyboard/Console.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 17
@@ -33,21 +35,21 @@ margin_bottom = 384.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 53.0
-margin_top = 21.0
+margin_top = 10.0
 margin_right = 587.0
-margin_bottom = 363.0
+margin_bottom = 374.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 margin_right = 534.0
-margin_bottom = 278.0
+margin_bottom = 300.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_right = 265.0
-margin_bottom = 278.0
+margin_bottom = 300.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer"]
 margin_right = 265.0
-margin_bottom = 278.0
+margin_bottom = 300.0
 
 [node name="Title" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer"]
 margin_right = 265.0
@@ -65,11 +67,11 @@ valign = 1
 [node name="Description" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer"]
 margin_top = 22.0
 margin_right = 265.0
-margin_bottom = 278.0
+margin_bottom = 300.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description"]
 margin_right = 265.0
-margin_bottom = 256.0
+margin_bottom = 278.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_right = 265.0
@@ -94,7 +96,11 @@ margin_bottom = 40.0
 margin_right = 86.0
 margin_bottom = 18.0
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_right = 86.0
+margin_bottom = 18.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer/CenterContainer/HBoxContainer"]
 margin_right = 86.0
 margin_bottom = 18.0
 custom_fonts/font = SubResource( 2 )
@@ -166,16 +172,31 @@ margin_right = 265.0
 margin_bottom = 150.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer7"]
+margin_right = 76.0
 margin_bottom = 18.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer7/CenterContainer"]
+margin_right = 76.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 2 )
+text = "* Pukul :"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
+margin_top = 154.0
+margin_right = 265.0
+margin_bottom = 172.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer9"]
+margin_bottom = 18.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer9/CenterContainer"]
 margin_bottom = 18.0
 custom_fonts/font = SubResource( 2 )
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
-margin_top = 154.0
+margin_top = 176.0
 margin_right = 265.0
-margin_bottom = 256.0
+margin_bottom = 278.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer8"]
 margin_right = 265.0
@@ -194,11 +215,11 @@ text = "Skill :
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 269.0
 margin_right = 534.0
-margin_bottom = 278.0
+margin_bottom = 300.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2"]
 margin_right = 265.0
-margin_bottom = 278.0
+margin_bottom = 300.0
 
 [node name="Title" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer"]
 margin_right = 265.0
@@ -216,11 +237,11 @@ valign = 1
 [node name="Description" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 22.0
 margin_right = 265.0
-margin_bottom = 278.0
+margin_bottom = 300.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description"]
 margin_right = 265.0
-margin_bottom = 256.0
+margin_bottom = 278.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_right = 265.0
@@ -317,16 +338,31 @@ margin_right = 265.0
 margin_bottom = 150.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer7"]
+margin_right = 76.0
 margin_bottom = 18.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer7/CenterContainer"]
+margin_right = 76.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 2 )
+text = "* Pukul :"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
+margin_top = 154.0
+margin_right = 265.0
+margin_bottom = 172.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer9"]
+margin_bottom = 18.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer9/CenterContainer"]
 margin_bottom = 18.0
 custom_fonts/font = SubResource( 2 )
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
-margin_top = 154.0
+margin_top = 176.0
 margin_right = 265.0
-margin_bottom = 256.0
+margin_bottom = 278.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer8"]
 margin_right = 265.0
@@ -343,9 +379,9 @@ text = "Skill :
    Kanan, Bawah, Skill Button"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 282.0
+margin_top = 304.0
 margin_right = 534.0
-margin_bottom = 300.0
+margin_bottom = 322.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 532.0
@@ -354,9 +390,9 @@ custom_fonts/font = SubResource( 3 )
 text = "----------------------------------------------------------------------------"
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 304.0
+margin_top = 326.0
 margin_right = 534.0
-margin_bottom = 321.0
+margin_bottom = 343.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
 margin_left = 126.0
@@ -389,9 +425,9 @@ custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_top = 325.0
+margin_top = 347.0
 margin_right = 534.0
-margin_bottom = 342.0
+margin_bottom = 364.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
 margin_left = 126.0
@@ -414,3 +450,463 @@ rect_min_size = Vector2( 270, 0 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Keluar"
+
+[node name="P1" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 384.0
+
+[node name="ZP1" type="Sprite" parent="P1"]
+position = Vector2( 260.492, 98 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -675.935, 605.123 )
+hframes = 3
+vframes = 5
+
+[node name="CP1" type="Sprite" parent="P1"]
+position = Vector2( 260.492, 98 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -679.494, 427.449 )
+hframes = 3
+vframes = 5
+frame = 2
+
+[node name="XP1" type="Sprite" parent="P1"]
+position = Vector2( 260.492, 98 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -680.975, 252.345 )
+hframes = 3
+vframes = 5
+frame = 1
+
+[node name="BawahP1" type="Sprite" parent="P1"]
+position = Vector2( 260.492, 98 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -682.562, 75.6782 )
+hframes = 3
+vframes = 5
+frame = 13
+
+[node name="KiriP1" type="Sprite" parent="P1"]
+position = Vector2( 260.492, 98 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -687.324, -101.349 )
+hframes = 3
+vframes = 5
+frame = 12
+
+[node name="KananP1" type="Sprite" parent="P1"]
+position = Vector2( 260.492, 98 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -693.674, -278.788 )
+hframes = 3
+vframes = 5
+frame = 14
+
+[node name="Label" type="Label" parent="P1"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 3.84
+margin_top = 0.59816
+margin_right = 3.87997
+margin_bottom = 0.550163
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="P1"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 3.84
+margin_top = 23.009
+margin_right = 3.87997
+margin_bottom = 22.961
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="P1"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 4.10489
+margin_top = 45.0225
+margin_right = 4.14487
+margin_bottom = 44.9745
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="P1"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 4.21457
+margin_top = 66.558
+margin_right = 4.25455
+margin_bottom = 66.51
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="P1"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 3.65271
+margin_top = 88.4978
+margin_right = 3.69269
+margin_bottom = 88.4498
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="P1"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 3.84
+margin_top = 111.187
+margin_right = 3.87997
+margin_bottom = 111.139
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KananP2" type="Sprite" parent="P1"]
+position = Vector2( 216, 64 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 2
+
+[node name="KiriP2" type="Sprite" parent="P1"]
+position = Vector2( 216.315, 85.2671 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 1
+
+[node name="BawahP2" type="Sprite" parent="P1"]
+position = Vector2( 216.21, 106.838 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+
+[node name="LompatP1" type="Sprite" parent="P1"]
+position = Vector2( 216, 128.946 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 4
+
+[node name="SkillP1" type="Sprite" parent="P1"]
+position = Vector2( 215.79, 151.159 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 5
+
+[node name="PukulP1" type="Sprite" parent="P1"]
+position = Vector2( 216.42, 173.477 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 3
+
+[node name="P2" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 384.0
+
+[node name="ZP2" type="Sprite" parent="P2"]
+position = Vector2( 528.968, 98.4675 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -675.935, 605.123 )
+hframes = 3
+vframes = 5
+frame = 3
+
+[node name="CP2" type="Sprite" parent="P2"]
+position = Vector2( 528.968, 98.4675 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -679.494, 427.449 )
+hframes = 3
+vframes = 5
+frame = 5
+
+[node name="XP2" type="Sprite" parent="P2"]
+position = Vector2( 528.968, 98.4675 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -680.975, 252.345 )
+hframes = 3
+vframes = 5
+frame = 4
+
+[node name="BawahP2" type="Sprite" parent="P2"]
+position = Vector2( 528.968, 98.4675 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -682.562, 75.6782 )
+hframes = 3
+vframes = 5
+frame = 7
+
+[node name="KiriP2" type="Sprite" parent="P2"]
+position = Vector2( 528.968, 98.4675 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -687.324, -101.349 )
+hframes = 3
+vframes = 5
+frame = 6
+
+[node name="KananP2" type="Sprite" parent="P2"]
+position = Vector2( 528.968, 98.4675 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 4 )
+offset = Vector2( -693.674, -278.788 )
+hframes = 3
+vframes = 5
+frame = 8
+
+[node name="Label" type="Label" parent="P2"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 268.518
+margin_top = -0.288116
+margin_right = 268.558
+margin_bottom = -0.336113
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="P2"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 268.518
+margin_top = 22.1227
+margin_right = 268.558
+margin_bottom = 22.0747
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="P2"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 268.783
+margin_top = 44.1362
+margin_right = 268.823
+margin_bottom = 44.0882
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="P2"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 268.892
+margin_top = 65.6718
+margin_right = 268.932
+margin_bottom = 65.6238
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="P2"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 268.33
+margin_top = 87.6115
+margin_right = 268.37
+margin_bottom = 87.5635
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="P2"]
+anchor_left = 0.294
+anchor_top = 0.146
+anchor_right = 0.308
+anchor_bottom = 0.193
+margin_left = 268.518
+margin_top = 110.301
+margin_right = 268.558
+margin_bottom = 110.253
+custom_fonts/font = SubResource( 1 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KananP1" type="Sprite" parent="P2"]
+position = Vector2( 481.933, 62.2182 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 2
+
+[node name="KiriP1" type="Sprite" parent="P2"]
+position = Vector2( 482.249, 83.4853 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 1
+
+[node name="BawahP1" type="Sprite" parent="P2"]
+position = Vector2( 482.143, 105.056 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+
+[node name="LompatP1" type="Sprite" parent="P2"]
+position = Vector2( 481.933, 127.164 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 4
+
+[node name="SkillP1" type="Sprite" parent="P2"]
+position = Vector2( 481.723, 149.377 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 5
+
+[node name="PukulP1" type="Sprite" parent="P2"]
+position = Vector2( 482.354, 171.696 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 3
+
+[node name="KananP1" type="Sprite" parent="."]
+position = Vector2( 216, 64 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 2
+
+[node name="KiriP1" type="Sprite" parent="."]
+position = Vector2( 216.315, 85.2671 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 1
+
+[node name="BawahP1" type="Sprite" parent="."]
+position = Vector2( 216.21, 106.838 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+
+[node name="LompatP1" type="Sprite" parent="."]
+position = Vector2( 216, 128.946 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 4
+
+[node name="SkillP1" type="Sprite" parent="."]
+position = Vector2( 215.79, 151.159 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 5
+
+[node name="PukulP1" type="Sprite" parent="."]
+position = Vector2( 216.42, 173.477 )
+scale = Vector2( 0.143557, 0.131028 )
+texture = ExtResource( 5 )
+hframes = 3
+vframes = 5
+frame = 3
