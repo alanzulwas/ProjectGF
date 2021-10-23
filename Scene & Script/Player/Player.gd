@@ -288,7 +288,14 @@ func _on_AreaDmg_area_entered(area):
 		self.KnockBack = true
 		self.HP -= 10
 		self.velocity = playerArea.KnockBack_vector * 50
-
+	
+	if area.is_in_group("Deadpoint"):
+		self.HP -= 20
+		if playerArea == _player1:
+			self.global_position.x = 160.071
+		elif playerArea == _player2:
+			self.global_position.x = 441.174
+		self.global_position.y = 172
 
 func _inputSkill_Timeout():
 	self.input = ""

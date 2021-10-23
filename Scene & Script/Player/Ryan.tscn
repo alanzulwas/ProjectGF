@@ -1781,10 +1781,11 @@ position = Vector2( -0.529732, 0.375 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.623717, 0 )
+position = Vector2( -0.0437052, 0.967761 )
 texture = ExtResource( 1 )
 hframes = 10
 vframes = 8
+frame = 2
 
 [node name="P2Anima" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 2 )

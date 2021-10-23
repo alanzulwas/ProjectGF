@@ -34,30 +34,30 @@ margin_right = 640.0
 margin_bottom = 384.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 53.0
+margin_left = 51.0
 margin_top = 10.0
-margin_right = 587.0
+margin_right = 589.0
 margin_bottom = 374.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 534.0
+margin_right = 538.0
 margin_bottom = 300.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 300.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 300.0
 
 [node name="Title" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 18.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Title"]
-margin_left = 74.0
-margin_right = 191.0
+margin_left = 75.0
+margin_right = 192.0
 margin_bottom = 18.0
 custom_fonts/font = SubResource( 1 )
 text = "Pemain Satu"
@@ -66,15 +66,15 @@ valign = 1
 
 [node name="Description" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer"]
 margin_top = 22.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 300.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 278.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 18.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer2"]
@@ -89,7 +89,7 @@ text = "Tombol Jalan :"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_top = 22.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 40.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer"]
@@ -108,7 +108,7 @@ text = "* Kanan :"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_top = 44.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 62.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer3"]
@@ -123,7 +123,7 @@ text = "* Kiri :"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_top = 66.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 84.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer4"]
@@ -138,7 +138,7 @@ text = "* Bawah :"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_top = 88.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 106.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer5"]
@@ -153,7 +153,7 @@ text = "* Lompat :"
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_top = 110.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 128.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer6"]
@@ -168,7 +168,7 @@ text = "* Skill :"
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_top = 132.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 150.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer7"]
@@ -183,7 +183,7 @@ text = "* Pukul :"
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_top = 154.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 172.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer9"]
@@ -195,39 +195,39 @@ custom_fonts/font = SubResource( 2 )
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer"]
 margin_top = 176.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 278.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer8"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 102.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer/VBoxContainer/Description/VBoxContainer/HBoxContainer8/CenterContainer"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 102.0
 custom_fonts/font = SubResource( 2 )
 text = "Skill :
 * Skill Satu :
-   Kanan, Kanan, Skill Button
+   Kanan/Kiri, Kanan/Kiri, Skill
 * Skill Dua :
-   Kanan, Bawah, Skill Button"
+   Kanan/Kiri, Bawah, Skill"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 269.0
-margin_right = 534.0
+margin_left = 271.0
+margin_right = 538.0
 margin_bottom = 300.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 300.0
 
 [node name="Title" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 18.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Title"]
-margin_left = 79.0
-margin_right = 186.0
+margin_left = 80.0
+margin_right = 187.0
 margin_bottom = 18.0
 custom_fonts/font = SubResource( 1 )
 text = "Pemain Dua"
@@ -236,15 +236,15 @@ valign = 1
 
 [node name="Description" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer"]
 margin_top = 22.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 300.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 278.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 18.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer2"]
@@ -259,7 +259,7 @@ text = "Tombol Jalan :"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_top = 22.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 40.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer"]
@@ -274,7 +274,7 @@ text = "* Kanan :"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_top = 44.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 62.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer3"]
@@ -289,7 +289,7 @@ text = "* Kiri :"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_top = 66.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 84.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer4"]
@@ -304,7 +304,7 @@ text = "* Bawah :"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_top = 88.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 106.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer5"]
@@ -319,7 +319,7 @@ text = "* Lompat :"
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_top = 110.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 128.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer6"]
@@ -334,7 +334,7 @@ text = "* Skill :"
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_top = 132.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 150.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer7"]
@@ -349,7 +349,7 @@ text = "* Pukul :"
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_top = 154.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 172.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer9"]
@@ -361,26 +361,26 @@ custom_fonts/font = SubResource( 2 )
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer"]
 margin_top = 176.0
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 278.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer8"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 102.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/CenterContainer2/VBoxContainer/Description/VBoxContainer/HBoxContainer8/CenterContainer"]
-margin_right = 265.0
+margin_right = 267.0
 margin_bottom = 102.0
 custom_fonts/font = SubResource( 2 )
 text = "Skill :
 * Skill Satu :
-   Kanan, Kanan, Skill Button
+   Kanan/Kiri, Kanan/Kiri, Skill
 * Skill Dua :
-   Kanan, Bawah, Skill Button"
+   Kanan/Kiri, Bawah, Skill"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 304.0
-margin_right = 534.0
+margin_right = 538.0
 margin_bottom = 322.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
@@ -391,12 +391,12 @@ text = "------------------------------------------------------------------------
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 326.0
-margin_right = 534.0
+margin_right = 538.0
 margin_bottom = 343.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_left = 126.0
-margin_right = 408.0
+margin_left = 128.0
+margin_right = 410.0
 margin_bottom = 17.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer3"]
@@ -426,12 +426,12 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 347.0
-margin_right = 534.0
+margin_right = 538.0
 margin_bottom = 364.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
-margin_left = 126.0
-margin_right = 407.0
+margin_left = 128.0
+margin_right = 409.0
 margin_bottom = 17.0
 
 [node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer3"]
@@ -858,53 +858,6 @@ frame = 5
 
 [node name="PukulP1" type="Sprite" parent="P2"]
 position = Vector2( 482.354, 171.696 )
-scale = Vector2( 0.143557, 0.131028 )
-texture = ExtResource( 5 )
-hframes = 3
-vframes = 5
-frame = 3
-
-[node name="KananP1" type="Sprite" parent="."]
-position = Vector2( 216, 64 )
-scale = Vector2( 0.143557, 0.131028 )
-texture = ExtResource( 5 )
-hframes = 3
-vframes = 5
-frame = 2
-
-[node name="KiriP1" type="Sprite" parent="."]
-position = Vector2( 216.315, 85.2671 )
-scale = Vector2( 0.143557, 0.131028 )
-texture = ExtResource( 5 )
-hframes = 3
-vframes = 5
-frame = 1
-
-[node name="BawahP1" type="Sprite" parent="."]
-position = Vector2( 216.21, 106.838 )
-scale = Vector2( 0.143557, 0.131028 )
-texture = ExtResource( 5 )
-hframes = 3
-vframes = 5
-
-[node name="LompatP1" type="Sprite" parent="."]
-position = Vector2( 216, 128.946 )
-scale = Vector2( 0.143557, 0.131028 )
-texture = ExtResource( 5 )
-hframes = 3
-vframes = 5
-frame = 4
-
-[node name="SkillP1" type="Sprite" parent="."]
-position = Vector2( 215.79, 151.159 )
-scale = Vector2( 0.143557, 0.131028 )
-texture = ExtResource( 5 )
-hframes = 3
-vframes = 5
-frame = 5
-
-[node name="PukulP1" type="Sprite" parent="."]
-position = Vector2( 216.42, 173.477 )
 scale = Vector2( 0.143557, 0.131028 )
 texture = ExtResource( 5 )
 hframes = 3
