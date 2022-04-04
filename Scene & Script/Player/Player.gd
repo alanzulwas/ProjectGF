@@ -157,6 +157,8 @@ func _getInput():
 		_inputHit()
 		_inputSkill()
 
+###################################### FUNGSI UTAMA PADA SCRIPT PLAYER.GD #####################################################
+
 func _inputMovement():
 	self.ui_left = "ui_left" + self.playerInput
 	self.ui_right = "ui_right" + self.playerInput
@@ -236,6 +238,9 @@ func _inputSkill():
 		if len(self.comboSkill) > 0 :
 			while len(self.comboSkill):
 				self.comboSkill.pop_front()
+				
+##########################################################################################################################
+
 
 func _input(event):
 	event = event
