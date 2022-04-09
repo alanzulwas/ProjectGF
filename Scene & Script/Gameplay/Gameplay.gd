@@ -2,6 +2,7 @@ extends Node2D
 
 var Jaka = load("res://Scene & Script/Player/Jaka.tscn").instance()
 var Ryan = load("res://Scene & Script/Player/Ryan.tscn").instance()
+var Map = load("res://Scene & Script/Map/Map2.tscn").instance()
 var Player1
 var Player2
 var Cam = load("res://Scene & Script/Camera/Cam.tscn").instance()
@@ -33,10 +34,11 @@ func _gameCondition(delta):
 	else:
 		if time < 1 :
 			TimeOn = false
-			if Player1.HP >= 1 and Player2.HP >= 1 :
+			if Player1.HP > 1.1:
 				Player1.HP -= 0.1
+			if Player2.HP > 1.1:
 				Player2.HP -= 0.1
-			else:
+			if Player1.HP <=0 or Player2.HP <=0:
 				BattleOn = false
 				$BattleSceneCanvas/BattleSceneAnnouncement.play("PostBattleScene")
 				set_process(false)

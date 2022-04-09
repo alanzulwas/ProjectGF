@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Asset/Tile/DirtTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Asset/Tile/starry_sky_milky_way_night_124665_1366x768.jpg" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3792, 8 )
+
+[node name="Map" type="Node2D"]
+z_index = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 65540, 0, 0, 65541, 2, 0, 65550, 0, 0, 65551, 2, 0, 131076, 6, 0, 131077, 8, 0, 131078, 0, 0, 131079, 2, 0, 131084, 0, 0, 131085, 2, 0, 131086, 6, 0, 131087, 8, 0, 196614, 6, 0, 196615, 8, 0, 196616, 0, 0, 196617, 1, 0, 196618, 1, 0, 196619, 2, 0, 196620, 6, 0, 196621, 8, 0, 262152, 6, 0, 262153, 7, 0, 262154, 7, 0, 262155, 8, 0, 458745, 0, 0, 458746, 1, 0, 458747, 1, 0, 458748, 1, 0, 458749, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393217, 2, 0, 393234, 0, 0, 393235, 1, 0, 393236, 1, 0, 393237, 1, 0, 393238, 1, 0, 393239, 1, 0, 393240, 1, 0, 393241, 1, 0, 393242, 2, 0, 524281, 6, 0, 524282, 7, 0, 524283, 7, 0, 524284, 7, 0, 524285, 7, 0, 524286, 7, 0, 524287, 7, 0, 458752, 7, 0, 458753, 8, 0, 458770, 6, 0, 458771, 7, 0, 458772, 7, 0, 458773, 7, 0, 458774, 7, 0, 458775, 7, 0, 458776, 7, 0, 458777, 7, 0, 458778, 8, 0, 655362, 0, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 2, 0, 655372, 0, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 2, 0, 720898, 6, 0, 720899, 7, 0, 720900, 7, 0, 720901, 7, 0, 720902, 7, 0, 720903, 8, 0, 720908, 6, 0, 720909, 7, 0, 720910, 7, 0, 720911, 7, 0, 720912, 7, 0, 720913, 8, 0 )
+
+[node name="Deadpoint" type="Area2D" parent="." groups=["Deadpoint"]]
+position = Vector2( 320, 704 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deadpoint"]
+shape = SubResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1320, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 2 )
