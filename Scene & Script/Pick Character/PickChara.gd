@@ -56,6 +56,9 @@ func _input(event):
 	elif event.is_action_pressed("ui_accept_P1") and !pickedP1:
 		$SelectedOption.play()
 		_handle_selection("P1",current_selection1)
+	elif event.is_action_pressed("ui_decline_P1"):
+		$SelectedOption.play()
+		_handle_selection("",3)
 
 	#P2
 	if event.is_action_pressed("ui_right_P2") and current_selection2 < 1 and !pickedP2:
@@ -69,6 +72,9 @@ func _input(event):
 	elif event.is_action_pressed("ui_accept_P2") and !pickedP2:
 		$SelectedOption.play()
 		_handle_selection("P2",current_selection2)
+	elif event.is_action_pressed("ui_decline_P2"):
+		$SelectedOption.play()
+		_handle_selection("",3)
 
 func _handle_selection(P,CuSe):
 	if P == "P1":
@@ -95,5 +101,9 @@ func _handle_selection(P,CuSe):
 		ScorePlayer.P2_Chara = Player2
 		yield(get_tree().create_timer(0.4),"timeout")
 		self.queue_free()
-		if get_tree().change_scene("res://Scene & Script/Gameplay/Gameplay.tscn") != OK :
+		if get_tree().change_scene("res://Scene & Script/PickMap/PickMap.tscn") != OK :
+			print ("An unexpected error occured when trying to switch to the Readme scene")
+	
+	if CuSe == 3 :
+		if get_tree().change_scene("res://Scene & Script/Menu Game/Menu_Game.tscn") != OK :
 			print ("An unexpected error occured when trying to switch to the Readme scene")

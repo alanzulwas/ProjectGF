@@ -1877,7 +1877,11 @@ disabled = true
 process_mode = 0
 wait_time = 0.1
 
+[node name="DPSInvulnerabiltyTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="animation_finished" from="P2Anima" to="." method="_on_animation_finished"]
 [connection signal="timeout" from="HitTimerReset" to="." method="HitTimerReset"]
 [connection signal="area_entered" from="AreaDmg" to="." method="_on_AreaDmg_area_entered"]
+[connection signal="area_exited" from="AreaDmg" to="." method="_on_AreaDmg_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_inputSkill_Timeout"]

@@ -2,7 +2,8 @@ extends Node2D
 
 var Jaka = load("res://Scene & Script/Player/Jaka.tscn").instance()
 var Ryan = load("res://Scene & Script/Player/Ryan.tscn").instance()
-var Map = load("res://Scene & Script/Map/Map2.tscn").instance()
+var MAPS = load("res://Scene & Script/Map/Map3.tscn").instance()
+var Map = ScorePlayer.pathMap
 var Player1
 var Player2
 var Cam = load("res://Scene & Script/Camera/Cam.tscn").instance()
@@ -15,6 +16,7 @@ onready var currentWinner = "NoWinner"
 onready var TimerGame = $Lifebars_and_Timer/T1/T11/TimerText
 
 func _ready():
+	_inisiasiMap()
 	_inisiasiPlayer()
 	_inisiasiCamera()
 	Cam.add_child(Player1)
@@ -56,6 +58,16 @@ func _gameCondition(delta):
 			
 			var timed_passed = "%02d : %02d" % [mins,secs]
 			TimerGame.text = timed_passed
+
+func _inisiasiMap():
+	var theMap
+	if Map == "map1":
+		theMap = load("res://Scene & Script/Map/Map.tscn").instance()
+	elif Map == "map2":
+		theMap = load("res://Scene & Script/Map/Map2.tscn").instance()
+	elif Map == "map3":
+		theMap = load("res://Scene & Script/Map/Map3.tscn").instance()
+	get_node("/root/Gameplay").add_child(theMap)
 
 func _inisiasiCamera():
 	Cam.name = "Cam"
