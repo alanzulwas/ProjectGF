@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 func calculate_center(rect: Rect2) -> Vector2:
 	return Vector2(
 		rect.position.x + rect.size.x / 2,
-		(rect.position.y + rect.size.y / 2) - 2)
+		(rect.position.y-2 + rect.size.y-2 / 2) - 2)
 
 func calculate_zoom(rect: Rect2, viewport_size: Vector2) -> Vector2:
 	var max_zoom = max(

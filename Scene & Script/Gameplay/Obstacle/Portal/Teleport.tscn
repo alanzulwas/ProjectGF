@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene & Script/Gameplay/Obstacle/Portal/Teleport.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=8]
+
+[node name="Teleport" type="Node2D"]
+position = Vector2( 304, 176 )
+
+[node name="TP_A" type="Area2D" parent="."]
+position = Vector2( 208, 104 )
+script = ExtResource( 1 )
+isTP_A = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TP_A"]
+shape = SubResource( 8 )
+
+[node name="TP_B" type="Area2D" parent="."]
+position = Vector2( -248, 104 )
+script = ExtResource( 1 )
+isTP_B = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TP_B"]
+shape = SubResource( 8 )
+
+[connection signal="body_entered" from="TP_A" to="TP_A" method="_on_TP_body_entered"]
+[connection signal="body_exited" from="TP_A" to="TP_A" method="_on_TP_body_exited"]
+[connection signal="body_entered" from="TP_B" to="TP_B" method="_on_TP_body_entered"]
+[connection signal="body_exited" from="TP_B" to="TP_B" method="_on_TP_body_exited"]

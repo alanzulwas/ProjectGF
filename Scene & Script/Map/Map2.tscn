@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Asset/Tile/DirtTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Asset/Tile/starry_sky_milky_way_night_124665_1366x768.jpg" type="Texture" id=2]
-[ext_resource path="res://Scene & Script/Map/Map2.gd" type="Script" id=3]
+[ext_resource path="res://Scene & Script/Map/ScriptMap/Map2.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3792, 8 )
@@ -10,7 +10,7 @@ extents = Vector2( 3792, 8 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 80, 24 )
 
-[node name="Map" type="Node2D"]
+[node name="Map2" type="Node2D"]
 z_index = 1
 script = ExtResource( 3 )
 DPS_Area = [ NodePath("DPS_Area"), NodePath("DPS_Area2") ]

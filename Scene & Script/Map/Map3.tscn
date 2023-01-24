@@ -1,7 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scene & Script/Map/Map2.gd" type="Script" id=1]
+[ext_resource path="res://Scene & Script/Gameplay/Obstacle/Portal/Teleport.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Asset/Tile/mokap island.jpg" type="Texture" id=2]
+[ext_resource path="res://Scene & Script/Gameplay/Obstacle/Lobang/Lobang.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3792, 8 )
@@ -18,21 +19,18 @@ extents = Vector2( 232, 68 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 222, 136 )
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 212, 84 )
-
-[node name="Map" type="Node2D"]
+[node name="Map3" type="Node2D"]
 z_index = -2
-script = ExtResource( 1 )
-DPS_Area = [ NodePath("DPS_Area") ]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -40480.0
-margin_top = -33656.0
-margin_right = 35728.0
-margin_bottom = 27472.0
+margin_left = -40384.0
+margin_top = -33600.0
+margin_right = 35824.0
+margin_bottom = 27528.0
+color = Color( 0.145098, 0.0392157, 0.0392157, 1 )
 
 [node name="MokapIsland" type="Sprite" parent="."]
+visible = false
 position = Vector2( 240, 200 )
 rotation = -1.5708
 scale = Vector2( 0.748123, 0.96495 )
@@ -50,7 +48,7 @@ position = Vector2( 696, 456 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pijakan1"]
 position = Vector2( -284.7, -42.9 )
 scale = Vector2( 7.84375, 1.51563 )
-polygon = PoolVector2Array( 22.0175, 118.037, 38.3363, 33.5834, 51.5952, -61.4266, -77.9347, -56.1483, -62.6359, 75.8101, -50.3968, 102.202, -45.2972, 144.428, -29.9984, 176.098, -17.7594, 213.047, -4.5004, 186.655, 7.73865, 176.098 )
+polygon = PoolVector2Array( 22.0175, 118.037, 38.3363, 33.5834, 51.5952, -61.4266, -77.9347, -61.4266, -62.6359, 75.8101, -50.3968, 102.202, -45.2972, 144.428, -29.9984, 176.098, -17.7594, 213.047, -4.5004, 186.655, 7.73865, 176.098 )
 
 [node name="Pijakan2" type="StaticBody2D" parent="."]
 position = Vector2( -416, 88 )
@@ -76,17 +74,6 @@ position = Vector2( 1144, -104 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pijakan5"]
 shape = SubResource( 6 )
 
-[node name="DPS_Area" type="Area2D" parent="." groups=["dpsArea"]]
-position = Vector2( 16, 240 )
+[node name="Lobang" parent="." instance=ExtResource( 3 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DPS_Area"]
-shape = SubResource( 7 )
-
-[node name="Label" type="Label" parent="DPS_Area"]
-margin_left = -32.0
-margin_top = -104.0
-margin_right = 16.0
-margin_bottom = -90.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
+[node name="Teleport" parent="." instance=ExtResource( 1 )]

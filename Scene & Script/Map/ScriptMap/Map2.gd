@@ -13,6 +13,7 @@ func _ready():
 	t = time - 6
 	for n in len(DPS_Area):
 		get_node(DPS_Area[n]).get_child(0).disabled = true
+		get_node(DPS_Area[n]).get_child(1).visible = false
 	tes = false
 
 func _process(delta):
@@ -26,6 +27,7 @@ func _process(delta):
 		tempIndexDPS = randi() % len(DPS_Area)
 		if time < 0:
 			tes = true
+			get_node(DPS_Area[tempIndexDPS]).get_child(1).visible = true
 			get_node(DPS_Area[tempIndexDPS]).get_child(0).disabled = false
 			RNG.randomize()
 			time = RNG.randf_range(10, 15)
@@ -35,4 +37,5 @@ func _process(delta):
 		
 		if t > time:
 			get_node(DPS_Area[tempIndexDPS]).get_child(0).disabled = true
+			get_node(DPS_Area[tempIndexDPS]).get_child(1).visible = false
 			tes = false

@@ -280,7 +280,6 @@ anchor_left = 0.175
 anchor_top = 0.937
 anchor_right = 0.2
 anchor_bottom = 0.979
-margin_left = -7.62939e-06
 margin_top = 0.191986
 margin_bottom = 0.0639954
 color = Color( 1, 0, 0, 1 )

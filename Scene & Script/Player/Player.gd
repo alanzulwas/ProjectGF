@@ -248,7 +248,6 @@ func _inputSkill():
 				
 ##########################################################################################################################
 
-
 func _input(event):
 	event = event
 	self.ui_skill = "ui_skill" + self.playerInput
@@ -309,9 +308,11 @@ func _on_AreaDmg_area_entered(area):
 			self.global_position.x = 441.174
 		self.global_position.y = 172
 	
+	### Fadhil
 	if area.is_in_group("dpsArea"):
 		self.dpsArea = true
 
+### Fadhil
 func _on_AreaDmg_area_exited(area):
 	if area.is_in_group("dpsArea"):
 		self.dpsArea = false
@@ -325,6 +326,7 @@ func _inputSkill_Timeout():
 			while len(self.comboSkill):
 				self.comboSkill.pop_front()
 
+### Fadhil
 func _obstacleDamage():
 	if DPSInvulTimer.is_stopped():
 		DPSInvulTimer.start()

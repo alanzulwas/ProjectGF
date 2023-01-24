@@ -10,9 +10,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LifebarPlayer1" type="TextureProgress" parent="."]
 margin_right = 40.0
@@ -31,9 +28,6 @@ margin_bottom = 40.0
 value = 100.0
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScoreP1" type="Label" parent="."]
 margin_left = 200.0

@@ -1716,7 +1716,7 @@ height = 25.4748
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 7.66323, 1.53123 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 2 )
