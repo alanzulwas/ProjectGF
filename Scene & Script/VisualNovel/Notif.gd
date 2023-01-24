@@ -6,3 +6,5 @@ func _input(event):
 		$".".visible = false
 		$".".queue_free()
 		get_parent().get_node("VideoPlayer").paused = false
+
+	

@@ -1705,7 +1705,7 @@ states/Skill2/position = Vector2( -214.667, 529.464 )
 transitions = [ "Hit3", "Idle", SubResource( 29 ), "Hit2", "Idle", SubResource( 30 ), "Hit1", "Idle", SubResource( 31 ), "Idle", "Hit1", SubResource( 32 ), "Idle", "Run", SubResource( 33 ), "Run", "Run-Hit", SubResource( 34 ), "Run", "Idle", SubResource( 35 ), "Run-Hit", "Idle", SubResource( 36 ), "Jump", "Fall", SubResource( 37 ), "Fall", "Idle", SubResource( 38 ), "Idle", "Jump", SubResource( 39 ), "Jump", "Jump-Hit", SubResource( 40 ), "Jump-Hit", "Jump", SubResource( 41 ), "Jump-Hit", "Fall", SubResource( 42 ), "Fall", "Jump-Hit", SubResource( 43 ), "Idle", "Hit2", SubResource( 44 ), "Idle", "Hit3", SubResource( 45 ), "Fall", "Jump", SubResource( 46 ), "Hurt", "Idle", SubResource( 47 ), "Idle", "Hurt", SubResource( 48 ), "Idle", "Death", SubResource( 49 ), "Idle", "Skill1", SubResource( 50 ), "Skill1", "Idle", SubResource( 51 ), "Idle", "Skill2", SubResource( 52 ), "Skill2", "Idle", SubResource( 53 ) ]
 start_node = "Idle"
 end_node = "Death"
-graph_offset = Vector2( -176.769, -123.25 )
+graph_offset = Vector2( -336.302, -120.017 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=55]
 
@@ -1716,7 +1716,7 @@ height = 25.4748
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 7.66323, 1.53123 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 2 )
@@ -1785,7 +1785,11 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 
+[node name="DPSInvulnerabiltyTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="animation_finished" from="P1Anima" to="." method="_on_animation_finished"]
 [connection signal="timeout" from="HitTimerReset" to="." method="HitTimerReset"]
 [connection signal="area_entered" from="AreaDmg" to="." method="_on_AreaDmg_area_entered"]
+[connection signal="area_exited" from="AreaDmg" to="." method="_on_AreaDmg_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_inputSkill_Timeout"]

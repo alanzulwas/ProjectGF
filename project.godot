@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "InfoKarakter",
 "language": "GDScript",
 "path": "res://Scene & Script/Galeri/PanelKarakter/Character Resource/characterResource.gd"
+}, {
+"base": "Node2D",
+"class": "map",
+"language": "GDScript",
+"path": "res://Scene & Script/Map/ScriptMap/Map2.gd"
 } ]
 _global_script_class_icons={
 "CharacterResource": "",
-"InfoKarakter": ""
+"InfoKarakter": "",
+"map": ""
 }
 
 [application]

@@ -31,10 +31,12 @@ var AttackPoints = 3
 var lagi_mukul = false
 var lagi_jalan = false
 var runHit = false
+var dpsArea = false
 var dir = 0
 var KnockBack_vector = Vector2.ZERO
 var roll_vector = Vector2.LEFT
 var playerInput = ""
+var DPSInvulTimer
 
 var _player1
 var _player2
@@ -52,6 +54,7 @@ func _ready():
 		self.global_scale.x = 1.5
 		self.global_scale.y = 1.5
 		self.playerInput = "_P2"
+		self.DPSInvulTimer = get_node("/root/Gameplay/Cam/Player1/DPSInvulnerabiltyTimer")
 		set_direction(DIRECTION_LEFT)
 	elif self == _player1 :
 		self.Player = "P1"
@@ -60,6 +63,7 @@ func _ready():
 		self.global_scale.x = 1.5
 		self.global_scale.y = 1.5
 		self.playerInput = ""
+		self.DPSInvulTimer = get_node("/root/Gameplay/Cam/Player2/DPSInvulnerabiltyTimer")
 		set_direction(DIRECTION_RIGHT)
 	self.state_machine = self.get_node("State").get("parameters/playback")
 	self.KnockBack_vector = self.roll_vector
@@ -149,6 +153,9 @@ func _healthPlayer():
 			if self.name == "Player2":
 				get_node("/root/Gameplay").currentWinner = "Player1"
 			self.state_machine.travel("Death")
+	
+	if self.dpsArea :
+		_obstacleDamage()
 
 func _getInput():
 	if get_node("/root/Gameplay").BattleOn:
@@ -241,7 +248,6 @@ func _inputSkill():
 				
 ##########################################################################################################################
 
-
 func _input(event):
 	event = event
 	self.ui_skill = "ui_skill" + self.playerInput
@@ -301,6 +307,15 @@ func _on_AreaDmg_area_entered(area):
 		elif playerArea == _player2:
 			self.global_position.x = 441.174
 		self.global_position.y = 172
+	
+	### Fadhil
+	if area.is_in_group("dpsArea"):
+		self.dpsArea = true
+
+### Fadhil
+func _on_AreaDmg_area_exited(area):
+	if area.is_in_group("dpsArea"):
+		self.dpsArea = false
 
 func _inputSkill_Timeout():
 	self.input = ""
@@ -310,3 +325,10 @@ func _inputSkill_Timeout():
 	if len(self.comboSkill) > 0 :
 			while len(self.comboSkill):
 				self.comboSkill.pop_front()
+
+### Fadhil
+func _obstacleDamage():
+	if DPSInvulTimer.is_stopped():
+		DPSInvulTimer.start()
+		self.KnockBack = false
+		self.HP -= 5

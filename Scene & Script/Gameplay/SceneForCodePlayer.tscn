@@ -1,14 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scene & Script/Map/Map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene & Script/Map/Map4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene & Script/Gameplay/GameplayTes.gd" type="Script" id=2]
 [ext_resource path="res://Scene & Script/Pause menu/Pause_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scene & Script/Lifebar/Lifebar.tscn" type="PackedScene" id=5]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="Map" parent="." instance=ExtResource( 1 )]
 
 [node name="Lifebars_and_Timer" type="CanvasLayer" parent="."]
 
@@ -18,3 +16,5 @@ script = ExtResource( 2 )
 
 [node name="Pause_menu" parent="PauseMenu" instance=ExtResource( 3 )]
 pause_mode = 2
+
+[node name="Map4" parent="." instance=ExtResource( 1 )]
